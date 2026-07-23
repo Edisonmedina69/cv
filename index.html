@@ -6,30 +6,26 @@
 <title>Edison Medina Valdez — Desarrollador Full Stack .NET & React | Remoto & SIFEN</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --primary: #1e40af;
-  --primary-dark: #0f172a;
-  --accent: #0284c7;
+  --primary: #0f172a;
+  --accent: #2563eb;
+  --accent-light: #eff6ff;
   --teal: #0d9488;
   --teal-light: #f0fdf4;
-  --amber: #d97706;
-  --emerald: #10b981;
-  --text-main: #0f172a;
+  --text-main: #1e293b;
   --text-muted: #475569;
   --text-light: #64748b;
-  --bg-page: #e2e8f0;
+  --border-color: #f1f5f9;
   --card-bg: #ffffff;
-  --border: #e2e8f0;
-  --tag-bg: #eff6ff;
-  --tag-border: #bfdbfe;
+  --bg-page: #f8fafc;
 }
 * { margin:0; padding:0; box-sizing:border-box; }
-html { font-size: 13px; }
+html { font-size: 13.5px; }
 body {
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  background: var(--bg-page);
+  background: #e2e8f0;
   color: var(--text-main);
   display: flex;
   justify-content: center;
@@ -40,7 +36,7 @@ body {
   width: 210mm;
   min-height: 297mm;
   background: var(--card-bg);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
   border-radius: 6px;
   overflow: hidden;
   display: flex;
@@ -49,187 +45,174 @@ body {
 
 /* ===== HEADER ===== */
 .header {
-  background: linear-gradient(135deg, #0b1329 0%, #1e3a5f 40%, #1d4ed8 100%);
+  background: linear-gradient(135deg, #090d16 0%, #0f172a 60%, #1e293b 100%);
   color: #ffffff;
-  padding: 24px 30px;
+  padding: 26px 30px;
   display: flex;
   align-items: center;
   gap: 22px;
-  position: relative;
-}
-.header::after {
-  content: '';
-  position: absolute;
-  right: -50px; top: -50px;
-  width: 230px; height: 230px;
-  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
+  border-bottom: 3px solid var(--accent);
 }
 .photo-container {
-  width: 88px; height: 88px;
+  width: 86px; height: 86px;
   border-radius: 50%;
-  border: 3px solid rgba(255,255,255,0.35);
+  border: 2px solid rgba(255,255,255,0.2);
   flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
-  font-size: 32px; font-weight: 800;
-  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
-  z-index: 1;
+  font-size: 30px; font-weight: 800;
+  background: rgba(255,255,255,0.1);
   overflow: hidden;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
 }
 .photo-container img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-.header-info { z-index: 1; flex: 1; }
+.header-info { flex: 1; }
 .header-name-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
 }
-.header-info h1 { font-size: 25px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.1; }
+.header-info h1 { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.1; }
 
 .badge-remote {
   background: #10b981;
-  color: #064e3b;
-  font-size: 10px;
-  font-weight: 800;
-  padding: 3px 10px;
-  border-radius: 20px;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
-  white-space: nowrap;
-}
-.badge-remote::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  background: #ffffff;
-  border-radius: 50%;
-  display: inline-block;
+  color: #ffffff;
+  font-size: 9.5px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .header-sub {
-  display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 6px 0 8px;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 5px 0 8px;
 }
 .badge-role {
-  font-size: 11.5px; font-weight: 700;
-  background: #38bdf8; color: #0f172a;
-  padding: 3px 11px; border-radius: 20px;
+  font-size: 11px; font-weight: 600;
+  color: #93c5fd;
+  border-right: 1px solid rgba(255,255,255,0.2);
+  padding-right: 8px;
 }
 .badge-sifen {
-  font-size: 11.5px; font-weight: 700;
-  background: #2dd4bf; color: #0f172a;
-  padding: 3px 11px; border-radius: 20px;
+  font-size: 11px; font-weight: 600;
+  color: #6ee7b7;
 }
 .contact-grid {
-  display: flex; gap: 16px; flex-wrap: wrap; font-size: 11px; opacity: 0.92;
+  display: flex; gap: 14px; flex-wrap: wrap; font-size: 10.5px; color: rgba(255, 255, 255, 0.85);
 }
 .contact-grid a { color: #ffffff; text-decoration: none; display: flex; align-items: center; gap: 4px; }
 .contact-grid a:hover { text-decoration: underline; }
 
-/* ===== RECRUITER HIGHLIGHTS BAR ===== */
-.recruiter-bar {
+/* ===== SLICK SUB-HEADER STATS ===== */
+.stats-bar {
   background: #f8fafc;
-  border-bottom: 1px solid var(--border);
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  text-align: center;
+  border-bottom: 1px solid #edf2f7;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 20px;
 }
-.r-stat {
-  padding: 10px 6px;
-  border-right: 1px solid var(--border);
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--text-muted);
 }
-.r-stat:last-child { border-right: none; }
-.r-stat .val {
-  font-size: 15px; font-weight: 800; color: var(--primary);
+.stat-item strong {
   font-family: 'JetBrains Mono', monospace;
-  display: flex; align-items: center; justify-content: center; gap: 4px;
+  color: var(--accent);
 }
-.r-stat .lbl { font-size: 9px; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
 
-/* ===== MAIN CONTENT ===== */
+/* ===== MAIN GRID ===== */
 .main-grid {
   display: grid;
   grid-template-columns: 1.25fr 1fr;
   flex: 1;
 }
-.col-left { padding: 18px 22px; border-right: 1px solid var(--border); display: flex; flex-direction: column; gap: 14px; }
-.col-right { padding: 18px 22px; background: #fafbfc; display: flex; flex-direction: column; gap: 14px; }
+.col-left { padding: 18px 24px; border-right: 1px solid #f1f5f9; display: flex; flex-direction: column; gap: 14px; }
+.col-right { padding: 18px 20px; background: #fafbfc; display: flex; flex-direction: column; gap: 14px; }
 
-/* ===== HEADINGS ===== */
+/* ===== SECTION HEADERS ===== */
 .section-title {
-  font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;
+  font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
   color: var(--primary); margin-bottom: 8px; display: flex; align-items: center; gap: 6px;
 }
-.section-title::after { content: ''; flex: 1; height: 1.5px; background: #dbeafe; }
+.section-title::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
 
 /* ===== EXPERIENCE ===== */
 .exp-card { margin-bottom: 12px; }
 .exp-card:last-child { margin-bottom: 0; }
 .exp-header { display: flex; justify-content: space-between; align-items: baseline; gap: 6px; }
-.exp-role { font-size: 12.5px; font-weight: 700; color: var(--text-main); }
-.exp-date { font-size: 9.5px; font-weight: 700; color: var(--primary); background: #eff6ff; padding: 2px 7px; border-radius: 4px; white-space: nowrap; }
-.exp-company { font-size: 11px; font-weight: 600; color: var(--teal); margin-bottom: 4px; }
+.exp-role { font-size: 12px; font-weight: 700; color: var(--primary); }
+.exp-date { font-size: 9.5px; font-weight: 700; color: var(--accent); background: var(--accent-light); padding: 2px 7px; border-radius: 4px; white-space: nowrap; }
+.exp-company { font-size: 10.5px; font-weight: 600; color: var(--teal); margin-bottom: 4px; }
 .exp-bullets { list-style: none; padding-left: 0; }
 .exp-bullets li {
-  font-size: 10px; color: var(--text-muted); line-height: 1.45; margin-bottom: 3px;
-  padding-left: 12px; position: relative;
+  font-size: 10px; color: var(--text-muted); line-height: 1.4; margin-bottom: 3.5px;
+  padding-left: 10px; position: relative;
 }
 .exp-bullets li::before {
-  content: '▸'; position: absolute; left: 0; color: var(--primary); font-weight: 700;
+  content: '•'; position: absolute; left: 0; color: var(--accent); font-weight: 700;
 }
 
-/* ===== PROJECTS ===== */
-.projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
-.p-box {
-  background: #ffffff; border: 1px solid var(--border); border-radius: 6px;
-  padding: 8px 10px; transition: all 0.2s;
+/* ===== MINIMALIST PROJECTS ===== */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
-.p-box:hover { border-color: var(--primary); box-shadow: 0 2px 8px rgba(30,64,175,0.1); }
-.p-title { font-size: 10.5px; font-weight: 700; color: var(--text-main); margin-bottom: 2px; }
-.p-desc { font-size: 9px; color: var(--text-light); line-height: 1.35; margin-bottom: 5px; }
-.p-tags { display: flex; flex-wrap: wrap; gap: 3px; }
-.p-tags span {
-  font-size: 7.5px; font-weight: 600; padding: 1px 5px; border-radius: 3px;
-  background: #f1f5f9; color: var(--text-muted);
+.p-row {
+  display: grid;
+  grid-template-columns: 0.35fr 0.65fr;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px dashed #e2e8f0;
 }
+.p-row:last-child { border-bottom: none; }
+.p-name { font-size: 11px; font-weight: 700; color: var(--primary); }
+.p-tech { font-size: 9px; font-weight: 600; color: var(--text-light); font-family: 'JetBrains Mono', monospace; margin-top: 2px; }
+.p-details { font-size: 9.5px; color: var(--text-muted); line-height: 1.35; }
 
 /* ===== VALUE CARD ===== */
 .value-box {
   background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%);
-  border: 1px solid #bbf7d0; border-radius: 6px; padding: 10px 12px;
+  border: 1px solid #dcfce7; border-radius: 4px; padding: 10px 12px;
 }
-.value-box h4 { font-size: 10px; font-weight: 800; color: #047857; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
-.value-box p { font-size: 10px; color: var(--text-muted); line-height: 1.45; }
+.value-box h4 { font-size: 9.5px; font-weight: 800; color: #047857; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
+.value-box p { font-size: 9.5px; color: var(--text-muted); line-height: 1.4; }
 
-/* ===== RIGHT COL: SKILLS MATRIX ===== */
-.skill-category { margin-bottom: 10px; }
+/* ===== RIGHT COL: SKILLS ===== */
+.skill-category { margin-bottom: 8px; }
 .skill-category:last-child { margin-bottom: 0; }
-.cat-title { font-size: 9.5px; font-weight: 700; color: var(--text-light); text-transform: uppercase; margin-bottom: 4px; }
+.cat-title { font-size: 9px; font-weight: 700; color: var(--text-light); text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.5px; }
 .pills-wrap { display: flex; flex-wrap: wrap; gap: 4px; }
 .pill {
-  font-size: 9px; font-weight: 600; padding: 3px 8px; border-radius: 5px; white-space: nowrap;
+  font-size: 8.5px; font-weight: 600; padding: 2px 7px; border-radius: 3px; white-space: nowrap;
+  background: #f1f5f9; color: var(--text-muted); border: 1px solid #e2e8f0;
 }
-.pill.primary { background: #eff6ff; color: var(--primary); border: 1px solid #bfdbfe; }
-.pill.teal { background: #f0fdf4; color: #0f766e; border: 1px solid #99f6e4; }
-.pill.purple { background: #faf5ff; color: #7e22ce; border: 1px solid #e9d5ff; }
-.pill.amber { background: #fffbeb; color: #b45309; border: 1px solid #fde68a; }
+.pill.highlight { background: #eff6ff; color: var(--accent); border-color: #bfdbfe; }
 
 /* ===== EDUCATION & LANGUAGES ===== */
-.edu-item { margin-bottom: 8px; }
-.edu-item h4 { font-size: 11px; font-weight: 700; }
-.edu-item p { font-size: 9.5px; color: var(--text-light); }
+.edu-item { margin-bottom: 6px; }
+.edu-item h4 { font-size: 11px; font-weight: 700; color: var(--primary); }
+.edu-item p { font-size: 9.5px; color: var(--text-muted); }
 
-.lang-item { display: flex; justify-content: space-between; font-size: 10px; padding: 4px 0; border-bottom: 1px solid var(--border); }
+.lang-item { display: flex; justify-content: space-between; font-size: 9.5px; padding: 3px 0; border-bottom: 1px solid #f1f5f9; color: var(--text-muted); }
 .lang-item:last-child { border-bottom: none; }
-.lang-stars { color: var(--amber); font-size: 9px; letter-spacing: 1px; font-weight: 700; }
+.lang-level { font-weight: 700; color: var(--primary); }
 
-/* ===== ATS KEYWORDS FOOTER ===== */
-.ats-keywords {
-  font-size: 7.5px; color: #94a3b8; padding: 6px 30px; background: #ffffff;
-  border-top: 1px solid var(--border); text-align: center; line-height: 1.2;
+/* ===== OBJECTIVE ===== */
+.obj-text { font-size: 9.5px; color: var(--text-muted); line-height: 1.4; }
+
+/* ===== ATS KEYWORDS (INVISIBLE TO HUMANS, SCANNABLE BY ATS) ===== */
+.ats-hidden {
+  display: none !important;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  overflow: hidden;
 }
 
 /* ===== PRINT OVERRIDES ===== */
@@ -238,7 +221,6 @@ body {
   body { background: #ffffff; padding: 0; margin: 0; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
   .page { box-shadow: none; border-radius: 0; width: 210mm; min-height: 297mm; margin: 0; }
   .header { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-  .p-box:hover { box-shadow: none; border-color: var(--border); }
 }
 </style>
 </head>
@@ -255,7 +237,7 @@ body {
     <div class="header-info">
       <div class="header-name-row">
         <h1>Edison Medina Valdez</h1>
-        <span class="badge-remote">🟢 Disponible Remoto</span>
+        <span class="badge-remote">100% Remoto</span>
       </div>
       <div class="header-sub">
         <span class="badge-role">Desarrollador Full Stack .NET & React</span>
@@ -273,30 +255,18 @@ body {
     </div>
   </header>
 
-  <!-- ===== RECRUITER POWER STATS ===== -->
-  <div class="recruiter-bar">
-    <div class="r-stat">
-      <div class="val">⚡ SIFEN DNIT</div>
-      <div class="lbl">Facturación Electrónica en Producción</div>
-    </div>
-    <div class="r-stat">
-      <div class="val">.NET 8 + React</div>
-      <div class="lbl">Stack Full Stack Principal</div>
-    </div>
-    <div class="r-stat">
-      <div class="val">100% Remoto</div>
-      <div class="lbl">Autonomía & Git Workflow</div>
-    </div>
-    <div class="r-stat">
-      <div class="val">🇵🇾 🇧🇷 🇺🇸</div>
-      <div class="lbl">Español | PT Nativo | EN Téc.</div>
-    </div>
+  <!-- ===== SLICK BAR ===== -->
+  <div class="stats-bar">
+    <div class="stat-item">🚀 Facturación: <strong>SIFEN DNIT</strong></div>
+    <div class="stat-item">💻 Stack: <strong>.NET 8 + React</strong></div>
+    <div class="stat-item">⚙️ Deploy: <strong>Docker / Cloud</strong></div>
+    <div class="stat-item">🌐 Idiomas: <strong>PT + ES Nativo</strong></div>
   </div>
 
   <!-- ===== MAIN GRID ===== -->
   <div class="main-grid">
 
-    <!-- LEFT COLUMN: EXPERIENCE & PROJECTS -->
+    <!-- LEFT COLUMN -->
     <div class="col-left">
 
       <!-- EXPERIENCIA LABORAL -->
@@ -305,136 +275,137 @@ body {
 
         <div class="exp-card">
           <div class="exp-header">
-            <span class="exp-role">Encargado de Facturación Electrónica & Backend .NET</span>
+            <span class="exp-role">Encargado de Facturación Electrónica & Dev .NET</span>
             <span class="exp-date">Ago 2025 – Presente</span>
           </div>
-          <div class="exp-company">Sisprime Sistemas (Presencial / Remoto)</div>
+          <div class="exp-company">Sisprime Sistemas (Presencial / Híbrido)</div>
           <ul class="exp-bullets">
-            <li>Lideré el desarrollo e implementación del módulo de <strong>Facturación Electrónica SIFEN (DNIT Paraguay)</strong> en C# .NET y SQL Server.</li>
-            <li>Construí un <strong>Worker Service 24/7</strong> para firma digital de XML tributarios (PKCS#12/X.509) y transmisión asíncrona mediante servicios SOAP Web Services.</li>
-            <li>Procesamiento integral de Documentos Tributarios Electrónicos (DE): Facturas, Notas de Crédito y Notas de Remisión.</li>
-            <li>Soporte técnico directo a clientes en puesta en marcha e integración de sistemas legados.</li>
-            <li>Trabajo estructurado en equipo bajo metodología ágil <strong>Scrum</strong> y versionado con <strong>Git / GitHub</strong>.</li>
+            <li><strong>Desarrollo de motor SIFEN:</strong> Lideré el desarrollo en <strong>C# .NET 8 y SQL Server</strong> del módulo tributario nacional para la emisión automática de DTEs fiscales.</li>
+            <li><strong>Integración SOAP/XML:</strong> Automatización de firmas digitales (certificados **PKCS#12/X.509**) y transmisión en tiempo real a los Web Services SOAP de la DNIT (Manual v150).</li>
+            <li><strong>Servicios 24/7:</strong> Implementación de **Worker Services** resilientes con colas de reintento automático y almacenamiento estructurado de logs.</li>
+            <li><strong>Soporte Técnico:</strong> Resolución de incidencias técnicas críticas e integración del API SIFEN con software legado.</li>
           </ul>
         </div>
 
         <div class="exp-card">
           <div class="exp-header">
-            <span class="exp-role">Desarrollador Full Stack Freelance / Remoto</span>
+            <span class="exp-role">Desarrollador Full Stack (Freelance)</span>
             <span class="exp-date">2024 – 2025</span>
           </div>
           <div class="exp-company">Proyectos Independientes & Consultoría</div>
           <ul class="exp-bullets">
-            <li><strong>MymbaSoft ERP:</strong> Plataforma ganadera integral en .NET 8, SQL Server, Entity Framework Core y Arquitectura Limpia en producción.</li>
-            <li><strong>ÑandeFinanza 2.0:</strong> Aplicación web de gestión financiera en React + Supabase (PostgreSQL RLS y sincronización en tiempo real).</li>
-            <li><strong>Megasoft App:</strong> Aplicación móvil Android nativa en Java + Firebase para seguimiento y logística de fletes.</li>
+            <li><strong>MymbaSoft ERP:</strong> Desarrollo del backend transaccional de un sistema ganadero con **.NET 8, EF Core y SQL Server** bajo Arquitectura Limpia.</li>
+            <li><strong>ÑandeFinanza 2.0:</strong> Diseño de la aplicación de gastos compartidos con **React** y backend as-a-service **Supabase** (PostgreSQL con seguridad RLS).</li>
+            <li><strong>Megasoft App:</strong> Desarrollo de aplicación móvil nativa en **Java + Firebase** para control de logística y fletes.</li>
           </ul>
         </div>
       </section>
 
-      <!-- PROYECTOS DESTACADOS -->
+      <!-- PORTAFOLIO DE PROYECTOS (DE-CLUTTERED / MINIMALIST) -->
       <section>
-        <div class="section-title">🚀 Portafolio de Proyectos</div>
-        <div class="projects-grid">
-          <div class="p-box">
-            <div class="p-title">🐄 MymbaSoft ERP</div>
-            <div class="pdesc">ERP ganadero .NET 8 + SQL Server. Módulos de compras, flota y stock. En producción.</div>
-            <div class="p-tags"><span>C#</span><span>.NET 8</span><span>SQL Server</span><span>EF Core</span></div>
+        <div class="section-title">🚀 Portafolio Seleccionado</div>
+        <div class="projects-list">
+          
+          <div class="p-row">
+            <div>
+              <div class="p-name">🐄 MymbaSoft ERP</div>
+              <div class="p-tech">.NET 8 · SQL Server</div>
+            </div>
+            <div class="p-details">ERP ganadero en producción. Controla inventarios, compras y flotas bajo arquitectura de Clean Code.</div>
           </div>
-          <div class="p-box">
-            <div class="p-title">⚙️ CaninWeb Worker</div>
-            <div class="pdesc">Motor SIFEN 24/7. Firma digital XML, SOAP DNIT y generación de KUDE (PDF/XML).</div>
-            <div class="p-tags"><span>C#</span><span>Worker</span><span>SOAP</span><span>SIFEN</span></div>
+
+          <div class="p-row">
+            <div>
+              <div class="p-name">⚙️ CaninWeb Worker</div>
+              <div class="p-tech">C# · SOAP · SIFEN</div>
+            </div>
+            <div class="p-details">Motor de facturación automatizada 24/7. Transmisión asíncrona a DNIT y generación de KUDE.</div>
           </div>
-          <div class="p-box">
-            <div class="p-title">💸 ÑandeFinanza 2.0</div>
-            <div class="pdesc">App React + Supabase. Gastos compartidos, RLS, historial salarial y notificaciones.</div>
-            <div class="p-tags"><span>React</span><span>Supabase</span><span>PostgreSQL</span></div>
+
+          <div class="p-row">
+            <div>
+              <div class="p-name">💸 ÑandeFinanza 2.0</div>
+              <div class="p-tech">React · Supabase</div>
+            </div>
+            <div class="p-details">App de finanzas en tiempo real. Sincronización instantánea y políticas de seguridad RLS directas en base de datos.</div>
           </div>
-          <div class="p-box">
-            <div class="p-title">📱 Megasoft App</div>
-            <div class="pdesc">App Android nativa Java + Firebase en tiempo real para logística vehicular.</div>
-            <div class="p-tags"><span>Java</span><span>Android</span><span>Firebase</span></div>
+
+          <div class="p-row">
+            <div>
+              <div class="p-name">📱 Megasoft Logistics</div>
+              <div class="p-tech">Java · Android · Firebase</div>
+            </div>
+            <div class="p-details">App Android para geolocalización y despacho de cargas en tiempo real.</div>
           </div>
-          <div class="p-box">
-            <div class="p-title">📅 ÑemoApp</div>
-            <div class="pdesc">Sistema de reservas React + Docker con integraciones vía WhatsApp API.</div>
-            <div class="p-tags"><span>React</span><span>Docker</span><span>WhatsApp API</span></div>
-          </div>
-          <div class="p-box">
-            <div class="p-title">🃏 Juego de Truco</div>
-            <div class="pdesc">Juego multiplayer online en tiempo real con JavaScript ES6 y Firebase.</div>
-            <div class="p-tags"><span>JavaScript</span><span>Firebase</span><span>HTML5</span></div>
-          </div>
+
         </div>
       </section>
 
       <!-- VALUE PROPOSITION -->
       <div class="value-box">
-        <h4>💡 Por qué contratarme (Perfil Diferenciador & Remoto)</h4>
+        <h4>💡 Propuesta de Valor (Mercado Remoto & PY)</h4>
         <p>
-          Combino autonomía y fuerte dominio técnico con visión de negocio. Domino la normativa y el <strong>Manual Técnico SIFEN v150</strong>, resolviendo de extremo a extremo la integración fiscal electrónica que las empresas en Paraguay y LATAM requieren con urgencia. Capacidad comprobada para llevar arquitecturas complejas a producción en entornos remotos.
+          Especialista en resolver integraciones gubernamentales complejas y construir backend robusto. Aporto autonomía, dominio técnico en <strong>C# / .NET 8</strong> y <strong>React</strong>, facilidad de trabajo en equipo remoto con Git Flow y la habilidad de comunicar soluciones técnicas tanto en <strong>Español</strong> como en <strong>Portugués</strong>.
         </p>
       </div>
 
     </div>
 
-    <!-- RIGHT COLUMN: SKILLS, EDU, LANGUAGES -->
+    <!-- RIGHT COLUMN -->
     <div class="col-right">
 
-      <!-- HABILIDADES TÉCNICAS (MATRIZ ATS) -->
+      <!-- HABILIDADES TÉCNICAS -->
       <section>
-        <div class="section-title">🛠️ Habilidades Técnicas</div>
+        <div class="section-title">🛠️ Stack Técnico</div>
 
         <div class="skill-category">
           <div class="cat-title">Backend & Arquitectura</div>
           <div class="pills-wrap">
-            <span class="pill primary">C#</span>
-            <span class="pill primary">.NET 8 / .NET Core</span>
-            <span class="pill primary">ASP.NET Web API</span>
-            <span class="pill primary">Entity Framework Core</span>
-            <span class="pill primary">SQL Server</span>
-            <span class="pill teal">Worker Services</span>
-            <span class="pill teal">Dapper</span>
-            <span class="pill teal">Java</span>
-            <span class="pill teal">Clean Architecture</span>
+            <span class="pill highlight">C#</span>
+            <span class="pill highlight">.NET 8 / Core</span>
+            <span class="pill highlight">ASP.NET Web API</span>
+            <span class="pill">EF Core</span>
+            <span class="pill">Dapper</span>
+            <span class="pill">Worker Services</span>
+            <span class="pill">Clean Architecture</span>
+            <span class="pill">SOAP / REST APIs</span>
+            <span class="pill">Java</span>
           </div>
         </div>
 
         <div class="skill-category">
           <div class="cat-title">Frontend Web & Móvil</div>
           <div class="pills-wrap">
-            <span class="pill primary">React.js</span>
-            <span class="pill primary">JavaScript (ES6+)</span>
-            <span class="pill primary">TypeScript</span>
-            <span class="pill teal">HTML5 / CSS3</span>
-            <span class="pill teal">Tailwind CSS</span>
-            <span class="pill teal">Bootstrap</span>
-            <span class="pill amber">Android Nativo (Java)</span>
+            <span class="pill highlight">React.js</span>
+            <span class="pill highlight">JavaScript (ES6+)</span>
+            <span class="pill">TypeScript</span>
+            <span class="pill">HTML5 / CSS3</span>
+            <span class="pill">Tailwind CSS</span>
+            <span class="pill">Bootstrap</span>
+            <span class="pill">Android (Java)</span>
           </div>
         </div>
 
         <div class="skill-category">
-          <div class="cat-title">Base de Datos e Infraestructura</div>
+          <div class="cat-title">Bases de Datos & Cloud</div>
           <div class="pills-wrap">
-            <span class="pill primary">Microsoft SQL Server</span>
-            <span class="pill primary">PostgreSQL</span>
-            <span class="pill teal">Supabase (RLS)</span>
-            <span class="pill teal">Firebase Realtime</span>
-            <span class="pill amber">Docker</span>
-            <span class="pill amber">Linux (Ubuntu/Bash)</span>
+            <span class="pill highlight">SQL Server</span>
+            <span class="pill highlight">PostgreSQL</span>
+            <span class="pill">Supabase (RLS)</span>
+            <span class="pill">Firebase</span>
+            <span class="pill">Docker</span>
+            <span class="pill">Linux (Ubuntu)</span>
           </div>
         </div>
 
         <div class="skill-category">
-          <div class="cat-title">Trabajo Remoto & Integraciones</div>
+          <div class="cat-title">Metodologías & Remoto</div>
           <div class="pills-wrap">
-            <span class="pill purple">Facturación SIFEN / DNIT</span>
-            <span class="pill purple">SOAP Web Services / XML</span>
-            <span class="pill purple">Git / GitHub</span>
-            <span class="pill purple">Comunicación Asíncrona</span>
-            <span class="pill purple">REST APIs</span>
-            <span class="pill purple">Scrum / Agile</span>
+            <span class="pill highlight">Git / GitHub</span>
+            <span class="pill">Scrum / Agile</span>
+            <span class="pill">Asynchronous Work</span>
+            <span class="pill">Postman / APIs</span>
+            <span class="pill">CI/CD (Basic)</span>
           </div>
         </div>
       </section>
@@ -443,12 +414,12 @@ body {
       <section>
         <div class="section-title">🎓 Educación</div>
         <div class="edu-item">
-          <h4>Análisis de Sistemas de Información</h4>
+          <h4>Análisis de Sistemas</h4>
           <p>Universidad Nacional de Canindeyú (UNICAN)</p>
         </div>
         <div class="edu-item">
-          <h4>Formación Continua Autodidacta</h4>
-          <p>Especialización en .NET 8, React, Supabase, Arquitectura Limpia y Seguridad en BD.</p>
+          <h4>Formación Continua</h4>
+          <p>Especialización en patrones de diseño, APIs seguras y desarrollo de apps modernas.</p>
         </div>
       </section>
 
@@ -457,23 +428,23 @@ body {
         <div class="section-title">🌐 Idiomas</div>
         <div class="lang-item">
           <span>🇪🇸 Español</span>
-          <span class="lang-stars">Nativo</span>
+          <span class="lang-level">Nativo</span>
         </div>
         <div class="lang-item">
           <span>🇧🇷 Portugués</span>
-          <span class="lang-stars">Nativo</span>
+          <span class="lang-level">Nativo</span>
         </div>
         <div class="lang-item">
           <span>🇬🇧 Inglés</span>
-          <span class="lang-stars">Técnico (Lectura / Docs)</span>
+          <span class="lang-level">Técnico (Lectura / Docs)</span>
         </div>
       </section>
 
-      <!-- OBJETIVO PROFESIONAL -->
+      <!-- OBJETIVO -->
       <section>
         <div class="section-title">🎯 Objetivo Laboral</div>
-        <p style="font-size: 9.5px; color: var(--text-muted); line-height: 1.45;">
-          Busco incorporarme como <strong>Desarrollador Full Stack / Backend .NET</strong> en una empresa de desarrollo o consultora de tecnología. Abierto a esquemas de <strong>Trabajo Remoto 100%</strong> o híbrido/presencial en <strong>Asunción y Gran Asunción</strong>.
+        <p class="obj-text">
+          Integrarme como desarrollador <strong>Full Stack / Backend .NET</strong> en un equipo internacional o local. Busco aportar a proyectos de alta escala, colaborando remotamente de forma ágil y profesional.
         </p>
       </section>
 
@@ -481,9 +452,9 @@ body {
 
   </div>
 
-  <!-- ATS KEYWORDS INVISIBLES Y VISIBLES DE BÚSQUEDA -->
-  <div class="ats-keywords">
-    Keywords reclutadores: C# | .NET 8 | ASP.NET Core | Web API | Entity Framework | SQL Server | React | TypeScript | JavaScript | SIFEN | DNIT | Facturación Electrónica | Worker Service | SOAP | REST | PostgreSQL | Supabase | Docker | Git | Scrum | Full Stack Developer | Remoto | Paraguay
+  <!-- PALABRAS CLAVE OCULTAS PARA ATS (Invisible para humanos, visible para robots reclutadores) -->
+  <div class="ats-hidden">
+    C# | .NET 8 | ASP.NET Core | Web API | Entity Framework Core | EF Core | SQL Server | React | TypeScript | JavaScript | SIFEN | DNIT | Facturación Electrónica | Worker Service | SOAP | REST | PostgreSQL | Supabase | Docker | Git | Scrum | Full Stack Developer | Remote | Software Engineer | Ingeniero de Software
   </div>
 
 </div>
