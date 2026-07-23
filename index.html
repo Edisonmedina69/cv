@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edison Medina Valdez — Full-Stack Developer</title>
+<style>
+:root {
+  --blue:#2563eb; --teal:#0d9488; --purple:#7c3aed;
+  --amber:#d97706; --rose:#e11d48; --cyan:#0891b2;
+  --gray50:#f8fafc; --gray100:#f1f5f9; --gray200:#e2e8f0;
+  --gray400:#94a3b8; --gray600:#475569; --gray800:#1e293b;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:13px}
+body{
+  font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+  background:#e8ecf1;
+  color:var(--gray800);
+  display:flex;justify-content:center;
+  padding:12px;
+}
+.page{
+  width:210mm;min-height:297mm;
+  background:#fff;
+  box-shadow:0 4px 24px rgba(0,0,0,0.1);
+  display:grid;
+  grid-template-columns:200px 1fr;
+}
+/* ===== LEFT PANEL ===== */
+.left{
+  background:linear-gradient(180deg,#1e3a5f 0%,#2563eb 100%);
+  color:#fff;
+  padding:28px 18px;
+  display:flex;flex-direction:column;gap:18px;
+}
+.photo-box{
+  width:100px;height:100px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.15);
+  margin:0 auto;
+  display:flex;align-items:center;justify-content:center;
+  font-size:36px;font-weight:900;
+  border:2px solid rgba(255,255,255,0.3);
+  overflow:hidden;
+  flex-shrink:0;
+}
+.photo-box img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.left h2{font-size:14px;font-weight:700;text-align:center;line-height:1.2}
+.left .subtitle{font-size:10px;text-align:center;opacity:0.8;text-transform:uppercase;letter-spacing:1.5px}
+
+.left-section{margin-top:4px}
+.left-section h3{
+  font-size:9px;text-transform:uppercase;letter-spacing:2px;
+  color:rgba(255,255,255,0.6);margin-bottom:8px;
+  padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,0.15);
+}
+.contact-row{
+  display:flex;align-items:center;gap:8px;
+  font-size:10px;margin-bottom:6px;opacity:0.9;
+  word-break:break-all;
+}
+.contact-row .ico{width:16px;text-align:center;flex-shrink:0;font-size:11px}
+
+.skill-tags{display:flex;flex-wrap:wrap;gap:4px}
+.skill-tags span{
+  font-size:8.5px;padding:3px 7px;border-radius:10px;
+  background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.15);
+  white-space:nowrap;
+}
+
+.lang-item{font-size:10px;margin-bottom:4px;display:flex;justify-content:space-between}
+.lang-item .level{opacity:0.7;font-size:9px}
+
+/* ===== RIGHT PANEL ===== */
+.right{padding:24px 22px;display:flex;flex-direction:column;gap:14px}
+
+.right h2{
+  font-size:20px;font-weight:800;color:var(--blue);
+  letter-spacing:-0.5px;margin-bottom:-4px;
+}
+.right .headline{
+  font-size:11.5px;color:var(--gray600);line-height:1.5;
+  border-left:3px solid var(--blue);padding-left:10px;
+}
+
+.section{}
+.section-title{
+  font-size:10px;text-transform:uppercase;letter-spacing:2px;
+  color:var(--blue);font-weight:700;
+  margin-bottom:8px;display:flex;align-items:center;gap:6px;
+}
+.section-title::after{content:'';flex:1;height:1px;background:var(--gray200)}
+
+.timeline-item{margin-bottom:10px;padding-left:14px;border-left:2px solid var(--gray200);position:relative}
+.timeline-item::before{
+  content:'';position:absolute;left:-5px;top:4px;
+  width:8px;height:8px;border-radius:50%;background:var(--blue);
+}
+.timeline-header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px}
+.timeline-header strong{font-size:12px;font-weight:700}
+.timeline-header .date{font-size:9.5px;color:var(--gray400);background:var(--gray100);padding:1px 7px;border-radius:4px;white-space:nowrap}
+.timeline-company{font-size:10.5px;color:var(--blue);font-weight:600;margin-bottom:3px}
+.timeline-desc{font-size:10px;color:var(--gray600);line-height:1.5;padding-left:10px}
+.timeline-desc li{margin-bottom:1px}
+.timeline-desc li::marker{color:var(--blue)}
+
+.projects-mini{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.proj-chip{
+  padding:7px 9px;border-radius:6px;
+  border:1px solid var(--gray200);font-size:9.5px;
+  transition:0.2s;
+}
+.proj-chip:hover{border-color:var(--blue);background:var(--gray50)}
+.proj-chip .pname{font-weight:700;font-size:10.5px;margin-bottom:2px}
+.proj-chip .pname .picon{margin-right:3px}
+.proj-chip .pdesc{color:var(--gray600);line-height:1.4;margin-bottom:4px}
+.proj-chip .ptech{display:flex;flex-wrap:wrap;gap:3px}
+.proj-chip .ptech span{
+  font-size:7.5px;padding:1px 6px;border-radius:3px;
+  background:var(--gray100);color:var(--gray600);
+}
+
+.edu-item{font-size:10px;margin-bottom:6px}
+.edu-item strong{font-size:11px}
+.edu-item .edetail{color:var(--gray600)}
+
+/* ===== PRINT ===== */
+@media print{
+  @page{size:A4;margin:0}
+  body{background:#fff;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{box-shadow:none;width:100%}
+  .left{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .proj-chip:hover{border-color:var(--gray200);background:transparent}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- LEFT PANEL -->
+  <div class="left">
+    <div class="photo-box">
+      <!-- CAMBIÁ ESTO por tu foto: <img src="foto.jpg" alt=""> -->
+      <span>EM</span>
+    </div>
+    <div>
+      <h2>Edison Medina<br>Valdez</h2>
+      <div class="subtitle">Full-Stack Developer</div>
+    </div>
+
+    <div class="left-section">
+      <h3>Contacto</h3>
+      <div class="contact-row"><span class="ico">✉️</span>edisonmedina415@<br>gmail.com</div>
+      <div class="contact-row"><span class="ico">📞</span>0973 744 383</div>
+      <div class="contact-row"><span class="ico">📍</span>Katueté, Canindeyú<br>Paraguay 🇵🇾</div>
+      <div class="contact-row"><span class="ico">🔗</span>linkedin.com/in/<br>edison-medina-valdez-333b1727b</div>
+      <div class="contact-row"><span class="ico">🐙</span>github.com/<br>Edisonmedina69</div>
+    </div>
+
+    <div class="left-section">
+      <h3>Stack Técnico</h3>
+      <div class="skill-tags">
+        <span>C# .NET 8</span><span>Java</span><span>React</span>
+        <span>JavaScript</span><span>SQL Server</span><span>PostgreSQL</span>
+        <span>Supabase</span><span>Firebase</span><span>Docker</span>
+        <span>Git</span><span>REST APIs</span><span>SIFEN</span>
+        <span>Linux</span><span>Scrum</span><span>Tailwind</span>
+        <span>Android</span><span>SOAP/XML</span>
+      </div>
+    </div>
+
+    <div class="left-section">
+      <h3>Idiomas</h3>
+      <div class="lang-item"><span>🇪🇸 Español</span><span class="level">Nativo</span></div>
+      <div class="lang-item"><span>🇧🇷 Portugués</span><span class="level">Nativo</span></div>
+      <div class="lang-item"><span>🇬🇧 Inglés</span><span class="level">Básico (lectura)</span></div>
+    </div>
+
+    <div class="left-section">
+      <h3>Educación</h3>
+      <div style="font-size:10px;line-height:1.4">
+        <strong>Análisis de Sistemas</strong><br>
+        <span style="opacity:0.8;font-size:9px">Universidad Nacional de Canindeyú</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="right">
+    <h2>Edison Medina Valdez</h2>
+    <div class="headline">
+      Desarrollador Full-Stack con experiencia en <strong>.NET, Java y React</strong>. 
+      Especialista en <strong>facturación electrónica SIFEN</strong> — implementación completa 
+      en producción. Combino sólida base técnica con comprensión del negocio para entregar 
+      soluciones que funcionan en el mundo real.
+    </div>
+
+    <!-- EXPERIENCIA -->
+    <div class="section">
+      <div class="section-title">💼 Experiencia</div>
+
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <strong>Encargado de Facturación Electrónica</strong>
+          <span class="date">Ago 2025 → Presente</span>
+        </div>
+        <div class="timeline-company">Sisprime Sistemas — Presencial</div>
+        <ul class="timeline-desc">
+          <li>Desarrollo de facturación electrónica con <strong>C# .NET + SQL Server</strong></li>
+          <li>Worker Service 24/7 para firma digital XML y transmisión SOAP a la DNIT</li>
+          <li>Procesamiento de Facturas y Notas de Remisión Electrónicas (SIFEN)</li>
+          <li>Soporte a clientes en facturación electrónica e implementación de sistemas</li>
+          <li>Metodología Scrum, control de versiones Git</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <strong>Desarrollador Full-Stack Freelance</strong>
+          <span class="date">2024 → 2025</span>
+        </div>
+        <div class="timeline-company">Proyectos Independientes</div>
+        <ul class="timeline-desc">
+          <li>ERP ganadero <strong>MymbaSoft</strong> (.NET 8, SQL Server, EF Core, Arquitectura Limpia)</li>
+          <li>App finanzas <strong>ÑandeFinanza</strong> (React, Supabase, PostgreSQL, RLS, 15+ fases BD)</li>
+          <li>App Android <strong>Megasoft</strong> (Java, Firebase, geolocalización, control de fletes)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PROYECTOS -->
+    <div class="section">
+      <div class="section-title">🚀 Proyectos</div>
+      <div class="projects-mini">
+
+        <div class="proj-chip">
+          <div class="pname"><span class="picon">🐄</span>MymbaSoft ERP</div>
+          <div class="pdesc">ERP ganadero .NET 8 + SQL Server. En producción.</div>
+          <div class="ptech"><span>C#</span><span>.NET 8</span><span>SQL Server</span><span>EF Core</span></div>
+        </div>
+
+        <div class="proj-chip">
+          <div class="pname"><span class="picon">⚙️</span>CaninWeb Worker</div>
+          <div class="pdesc">Motor SIFEN 24/7. Firma digital + SOAP DNIT.</div>
+          <div class="ptech"><span>C#</span><span>Worker</span><span>SOAP</span><span>SIFEN</span></div>
+        </div>
+
+        <div class="proj-chip">
+          <div class="pname"><span class="picon">💸</span>ÑandeFinanza 2.0</div>
+          <div class="pdesc">App React+Supabase. Gastos compartidos, RLS.</div>
+          <div class="ptech"><span>React</span><span>Supabase</span><span>PostgreSQL</span></div>
+        </div>
+
+        <div class="proj-chip">
+          <div class="pname"><span class="picon">📱</span>Megasoft App</div>
+          <div class="pdesc">App Android nativa. Logística y fletes.</div>
+          <div class="ptech"><span>Java</span><span>Android</span><span>Firebase</span></div>
+        </div>
+
+        <div class="proj-chip">
+          <div class="pname"><span class="picon">📅</span>ÑemoApp</div>
+          <div class="pdesc">Gestión y reservas. React+Supabase+Docker.</div>
+          <div class="ptech"><span>React</span><span>Docker</span><span>WhatsApp API</span></div>
+        </div>
+
+        <div class="proj-chip">
+          <div class="pname"><span class="picon">🃏</span>Juego de Truco</div>
+          <div class="pdesc">Multiplayer real-time. JavaScript + Firebase.</div>
+          <div class="ptech"><span>JS</span><span>Firebase</span><span>HTML5</span></div>
+        </div>
+
+        <div class="proj-chip">
+          <div class="pname"><span class="picon">🎬</span>MagisFilm</div>
+          <div class="pdesc">App de películas. Java + API REST.</div>
+          <div class="ptech"><span>Java</span><span>REST</span><span>Android</span></div>
+        </div>
+
+        <div class="proj-chip">
+          <div class="pname"><span class="picon">🔍</span>GitHub Search</div>
+          <div class="pdesc">Buscador de repos y usuarios GitHub API.</div>
+          <div class="ptech"><span>Java</span><span>GitHub API</span><span>REST</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- DIFERENCIADOR -->
+    <div class="section">
+      <div class="section-title">💡 Valor Agregado</div>
+      <div style="font-size:10.5px;color:var(--gray600);line-height:1.5;padding:8px 10px;background:linear-gradient(135deg,#eff6ff,#f0fdf4);border-radius:6px;border:1px solid #dbeafe">
+        <strong>No solo programo: entiendo el negocio.</strong> Mi experiencia en los sectores agromecánico y financiero 
+        me permite traducir necesidades reales en software. Soy uno de los pocos desarrolladores en Paraguay con 
+        <strong style="color:var(--blue)">integración SIFEN completa en producción</strong>: firma digital de XML, 
+        transmisión SOAP a la DNIT, procesamiento de documentos fiscales electrónicos, y soporte directo a clientes.
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
