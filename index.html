@@ -570,8 +570,8 @@ body {
       <div class="lbl">Stack Core Técnico</div>
     </div>
     <div class="metric-item">
-      <div class="val">3 Sistemas</div>
-      <div class="lbl">En Producción Activa</div>
+      <div class="val">AI-Driven Dev</div>
+      <div class="lbl">Agentes & Prompting</div>
     </div>
     <div class="metric-item">
       <div class="val">ES / PT Nativo</div>
@@ -587,31 +587,30 @@ body {
 
       <!-- EXPERIENCIA LABORAL -->
       <section>
-        <div class="title-sec">💼 Experiencia Corporativa</div>
+        <div class="title-sec">💼 Experiencia de Desarrollo</div>
 
         <div class="exp-item">
           <div class="exp-title-row">
-            <span class="exp-role">Encargado de Facturación Electrónica & Dev .NET</span>
+            <span class="exp-role">Especialista en Facturación Electrónica SIFEN (Propio) & Dev .NET</span>
             <span class="exp-period">Ago 2025 – Presente</span>
           </div>
-          <div class="exp-meta">Sisprime Sistemas · Presencial / Híbrido</div>
+          <div class="exp-meta">Sisprime Sistemas / Desarrollo Independiente</div>
           <ul class="exp-desc">
-            <li><strong>Liderazgo del motor fiscal SIFEN:</strong> Diseñé e implementé en <strong>C# (.NET 8)</strong> el módulo de facturación electrónica para emisión, firma y transmisión automática de DTEs (Facturas y Notas de Remisión).</li>
-            <li><strong>Automatización SOAP/XML:</strong> Implementé el procesamiento seguro de firmas digitales PKCS#12 (certificados X.509) y la conexión asíncrona directa con los servidores de la DNIT bajo el Manual Técnico SIFEN v150.</li>
-            <li><strong>Arquitectura Resiliente:</strong> Construí <strong>Worker Services</strong> concurrentes en segundo plano con persistencia y colas de reintentos para tolerancia a fallos ante intermitencias del servidor estatal.</li>
-            <li><strong>Integración:</strong> Diseñé APIs RESTful para enlazar e integrar sistemas de gestión preexistentes (legados) con el motor de facturación.</li>
+            <li><strong>Desarrollo del motor fiscal propio:</strong> Diseñé e implementé en <strong>C# (.NET 8)</strong> el sistema de facturación electrónica para emisión, firma criptográfica y transmisión de DTEs (**Facturas, Notas de Crédito, Notas de Débito, Auto-facturas e Importación/Exportación**) según el Manual Técnico SIFEN v150.</li>
+            <li><strong>Automatización SOAP/XML:</strong> Conexión con los Web Services de la DNIT, firma digital PKCS#12 (certificados X.509) y validación estricta de esquemas XSD oficiales.</li>
+            <li><strong>Servicios Resilientes:</strong> Programación de **Worker Services** en segundo plano con control de concurrencia y colas de reintento para alta disponibilidad.</li>
           </ul>
         </div>
 
         <div class="exp-item">
           <div class="exp-title-row">
-            <span class="exp-role">Desarrollador Full Stack (Freelance / Consultor)</span>
+            <span class="exp-role">Desarrollador Full Stack / Colaborador de Proyectos</span>
             <span class="exp-period">2024 – 2025</span>
           </div>
-          <div class="exp-meta">Proyectos Independientes & Clientes Corporativos</div>
+          <div class="exp-meta">Proyectos en Equipo & Consultoría</div>
           <ul class="exp-desc">
-            <li><strong>Arquitectura de ERP Ganadero:</strong> Creación integral del backend transaccional de *MymbaSoft ERP* utilizando patrones SOLID, EF Core y Clean Architecture.</li>
-            <li><strong>Frontend Interactivo:</strong> Diseño y desarrollo de aplicaciones web responsivas en React.js con integraciones de APIs seguras y bases de datos relacionales en la nube.</li>
+            <li><strong>Colaboración en ERP Ganadero (MymbaSoft):</strong> Desarrollo en equipo del backend transaccional y paneles web utilizando **ASP.NET Core Razor Pages / MVC**, **C#** y **SQL Server**. Gestión ágil de tareas con **GitHub Issues**, control de versiones por ramas en GitHub, documentación en **Markdown**, y optimización del flujo mediante **Agentes de IA y Skills personalizados**.</li>
+            <li><strong>Aplicaciones Web Progresivas (PWA):</strong> Construcción de arquitecturas frontend interactivas responsivas en **React.js** estructuradas como PWAs con APIs seguras y bases de datos SQL relacionales en la nube.</li>
           </ul>
         </div>
       </section>
@@ -624,11 +623,11 @@ body {
           <div class="proj-block">
             <div class="proj-head">
               <span class="proj-name">🐄 MymbaSoft ERP</span>
-              <span class="proj-scope">Backend & Core</span>
+              <span class="proj-scope">MVC & Razor Pages</span>
             </div>
-            <div class="proj-tech-line">C# · .NET 8 · EF Core · SQL Server · React.js · Tailwind CSS</div>
+            <div class="proj-tech-line">C# · ASP.NET Core Razor/MVC · SQL Server · Git Branches · AI Tools</div>
             <div class="proj-detail">
-              Sistema ERP ganadero completo en producción. Diseñado en <strong>Clean Architecture</strong> (separación de capas de dominio, infraestructura y API). Backend implementa el patrón **Repository & Unit of Work** para transacciones seguras en SQL Server. Frontend administrativo desarrollado en **React** que consume la API de forma asíncrona con diseño fluido vía **Tailwind CSS**.
+              Sistema de gestión ganadera transaccional desarrollado en equipo. Implementación de controladores, layouts dinámicos y base de datos relacional en **SQL Server**. Flujo de trabajo ágil gestionado con **GitHub Issues** y desarrollo optimizado mediante **agentes autónomos de IA** y documentación técnica estructurada en **Markdown**.
             </div>
           </div>
 
@@ -639,29 +638,29 @@ body {
             </div>
             <div class="proj-tech-line">C# Worker Service · SOAP · XML Cryptography · X.509</div>
             <div class="proj-detail">
-              Servicio de procesamiento 24/7 de alta concurrencia. Valida esquemas XML contra XSD oficiales de la DNIT, realiza la **firma digital criptográfica** utilizando certificados PKCS#12 y transmite de forma asíncrona mediante protocolos SOAP. Genera el código de control de firmas (CDC) y renderiza el documento KUDE (PDF/XML).
+              Servicio de procesamiento 24/7 de alta concurrencia de facturación electrónica. Valida esquemas XML contra XSD oficiales, firma criptográficamente con certificados PKCS#12 y transmite mediante protocolos SOAP SOAP a los servidores DNIT. Genera códigos CDC y renderiza el formato KUDE.
             </div>
           </div>
 
           <div class="proj-block">
             <div class="proj-head">
               <span class="proj-name">💸 ÑandeFinanza 2.0</span>
-              <span class="proj-scope">Frontend & DB Cloud</span>
+              <span class="proj-scope">React PWA & DB Cloud</span>
             </div>
-            <div class="proj-tech-line">React.js · Supabase · PostgreSQL · Row Level Security (RLS)</div>
+            <div class="proj-tech-line">React.js (PWA) · Supabase · PostgreSQL · Row Level Security (RLS)</div>
             <div class="proj-detail">
-              Aplicación web de finanzas compartidas en tiempo real. Frontend SPA construido en **React** con gestión de estado modular. Base de datos **PostgreSQL en Supabase** securizada mediante políticas **RLS** a nivel de base de datos para aislamiento de datos entre cuentas. Sincronización instantánea de registros mediante websockets directos.
+              Aplicación web progresiva (**PWA**) para finanzas compartidas en tiempo real. Interfaz SPA responsive en **React** con soporte offline. Base de datos **PostgreSQL en Supabase** con políticas **RLS** configuradas para garantizar el aislamiento absoluto de datos entre usuarios. Sincronización instantánea de registros por websockets.
             </div>
           </div>
 
           <div class="proj-block">
             <div class="proj-head">
-              <span class="proj-name">📱 Megasoft Logistics</span>
-              <span class="proj-scope">Mobile App</span>
+              <span class="proj-name">📅 ÑemoApp</span>
+              <span class="proj-scope">Booking PWA & API Integration</span>
             </div>
-            <div class="proj-tech-line">Java · Android SDK · Firebase Realtime DB · GPS Services</div>
+            <div class="proj-tech-line">React.js (PWA) · WhatsApp API · Docker · Node.js</div>
             <div class="proj-detail">
-              Aplicación móvil nativa Android enfocada al transporte logístico de cargas. Implementa servicios de localización en segundo plano para rastreo vehicular en ruta y **Firebase Realtime Database** para sincronización de estados instantánea con la central de despachos.
+              Plataforma de agenda y reservas de turnos diseñada como **PWA** optimizada para móviles. Implementa la integración con la **API de WhatsApp** para el envío automático de confirmaciones y alertas de reserva en tiempo real. Contenerizada y empaquetada mediante **Docker** para despliegue modular.
             </div>
           </div>
 
@@ -688,8 +687,8 @@ body {
         <div class="skill-sec">
           <div class="skill-sec-title">Backend & Arquitectura</div>
           <div class="pills">
-            <span class="pill-item featured">C#</span>
-            <span class="pill-item featured">.NET 8 / Core</span>
+            <span class="pill-item featured">C# / .NET 8</span>
+            <span class="pill-item featured">ASP.NET MVC / Razor</span>
             <span class="pill-item featured">ASP.NET Web API</span>
             <span class="pill-item">EF Core</span>
             <span class="pill-item">Dapper</span>
@@ -703,7 +702,7 @@ body {
         <div class="skill-sec">
           <div class="skill-sec-title">Frontend & Web</div>
           <div class="pills">
-            <span class="pill-item featured">React.js</span>
+            <span class="pill-item featured">React.js (PWA)</span>
             <span class="pill-item featured">JavaScript (ES6+)</span>
             <span class="pill-item">TypeScript</span>
             <span class="pill-item">HTML5 / CSS3</span>
@@ -726,13 +725,15 @@ body {
         </div>
 
         <div class="skill-sec">
-          <div class="skill-sec-title">Herramientas & Procesos</div>
+          <div class="skill-sec-title">IA & Metodologías Ágiles</div>
           <div class="pills">
-            <span class="pill-item featured">Git / GitHub</span>
-            <span class="pill-item">Scrum / Metodologías Ágiles</span>
-            <span class="pill-item">SOAP / REST Webservices</span>
-            <span class="pill-item">Postman</span>
-            <span class="pill-item">XML Cryptography</span>
+            <span class="pill-item featured">AI Agents Flow</span>
+            <span class="pill-item featured">Prompt Engineering</span>
+            <span class="pill-item teal">AI Custom Skills</span>
+            <span class="pill-item">GitHub Issues</span>
+            <span class="pill-item">Git / Branches Flow</span>
+            <span class="pill-item">Markdown Docs</span>
+            <span class="pill-item">Scrum</span>
           </div>
         </div>
       </section>
@@ -769,11 +770,11 @@ body {
         </div>
       </section>
 
-      <!-- OBJETIVO PROFESIONAL -->
+      <!-- OBJETIVO -->
       <section>
         <div class="title-sec">🎯 Objetivo Laboral</div>
         <p class="goal-text">
-          Integrarme como desarrollador <strong>Full Stack / Backend .NET</strong> en una empresa de software o consultora de primer nivel. Busco aportar mi dominio de arquitecturas robustas y APIs fiscales para optimizar y modernizar productos transaccionales a gran escala.
+          Integrarme como desarrollador <strong>Full Stack / Backend .NET</strong>. Busco aportar mi experiencia en integraciones críticas y arquitecturas transaccionales, utilizando flujos avanzados de <strong>Inteligencia Artificial y metodologías ágiles</strong> para acelerar los ciclos de entrega de software de alta calidad.
         </p>
       </section>
 
