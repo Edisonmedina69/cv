@@ -40,7 +40,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px 0;
+  padding: 20px 0 40px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -50,7 +50,7 @@ body {
   background: #ffffff;
   padding: 14px 20px;
   border-radius: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   display: flex;
   flex-wrap: wrap;
@@ -63,6 +63,9 @@ body {
   font-weight: 700;
   font-size: 14px;
   color: var(--panel-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .action-buttons {
@@ -102,13 +105,47 @@ body {
   color: var(--text-primary);
 }
 
+.btn-ey {
+  background: #ffe600;
+  color: #1a1a1a;
+  border: 1px solid #e5ce00;
+  font-weight: 700;
+}
+
+.btn-ey:hover {
+  background: #f0d800;
+}
+
+/* PANEL PERSONALIZADOR DINÁMICO */
 .customizer-box {
   width: 210mm;
   background: #ffffff;
-  padding: 16px 20px;
+  padding: 18px 22px;
   border-radius: 8px;
   margin-bottom: 20px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.customizer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 8px;
+}
+
+.customizer-header h3 {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--panel-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.customizer-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
@@ -127,17 +164,19 @@ body {
   text-transform: uppercase;
 }
 
-.input-group input {
-  padding: 6px 10px;
+.input-group input, .input-group select {
+  padding: 7px 10px;
   border: 1px solid var(--border-color);
   border-radius: 4px;
   font-family: inherit;
   font-size: 11px;
+  background: #f8fafc;
 }
 
-.input-group input:focus {
+.input-group input:focus, .input-group select:focus {
   outline: none;
   border-color: var(--accent-indigo);
+  background: #ffffff;
 }
 
 /* DOCUMENTO A4 */
@@ -185,6 +224,19 @@ body {
   object-fit: cover;
   border-radius: 50%;
   background: #0f172a;
+}
+
+.photo-fallback {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #0f172a;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 800;
 }
 
 .hero-main {
@@ -239,9 +291,9 @@ body {
 .letter-meta {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
   border-bottom: 1px solid var(--border-color);
-  padding-bottom: 16px;
+  padding-bottom: 14px;
 }
 
 .recipient-info {
@@ -268,7 +320,7 @@ body {
 }
 
 .letter-content p {
-  margin-bottom: 16px;
+  margin-bottom: 15px;
   text-align: justify;
 }
 
@@ -276,7 +328,7 @@ body {
   background: #f8fafc;
   border-left: 4px solid var(--accent-indigo);
   padding: 14px 18px;
-  margin: 18px 0;
+  margin: 16px 0;
   border-radius: 0 6px 6px 0;
 }
 
@@ -301,7 +353,7 @@ body {
 
 .signature-block {
   margin-top: auto;
-  padding-top: 30px;
+  padding-top: 25px;
 }
 
 .signature-name {
@@ -337,34 +389,80 @@ body {
 
 <!-- TOOLBAR CONTROLES -->
 <div class="toolbar">
-  <div class="toolbar-title">📄 Carta de Presentación Interactiva</div>
+  <div class="toolbar-title">📄 Carta de Presentación Parametrizada & Adaptable</div>
   <div class="action-buttons">
+    <button onclick="cargarPlantillaEY()" class="btn btn-ey">
+      ✨ Cargar Postulación EY
+    </button>
     <a href="index.html" class="btn btn-secondary">
       ⬅ Volver al CV
     </a>
     <button onclick="window.print()" class="btn">
-      🖨️ Imprimir / Guardar en PDF
+      🖨️ Imprimir / PDF
     </button>
   </div>
 </div>
 
-<!-- EDITOR RÁPIDO PARA VACANTES -->
+<!-- EDITOR / PARAMETRIZADOR INTERACTIVO -->
 <div class="customizer-box">
-  <div class="input-group">
-    <label for="inputEmpresa">Empresa</label>
-    <input type="text" id="inputEmpresa" value="Nombre de la Empresa" oninput="updateLetter()">
+  <div class="customizer-header">
+    <h3>⚙️ Parámetros de Personalización de la Carta</h3>
+    <span style="font-size:10px; color:var(--text-light)">Los cambios se reflejan al instante en la carta</span>
   </div>
-  <div class="input-group">
-    <label for="inputPuesto">Puesto a Postular</label>
-    <input type="text" id="inputPuesto" value="Desarrollador Full Stack .NET & React" oninput="updateLetter()">
+  
+  <div class="customizer-grid">
+    <div class="input-group">
+      <label for="inputEmpresa">Empresa / Organización</label>
+      <input type="text" id="inputEmpresa" value="EY Paraguay (Ernst & Young)" oninput="updateLetter()">
+    </div>
+    
+    <div class="input-group">
+      <label for="inputPuesto">Puesto a Postular</label>
+      <input type="text" id="inputPuesto" value="Desarrollador Full Stack .NET & React / Next.js" oninput="updateLetter()">
+    </div>
+    
+    <div class="input-group">
+      <label for="inputContacto">Dirigido a / Reclutador</label>
+      <input type="text" id="inputContacto" value="Equipo de Selección de Talentos" oninput="updateLetter()">
+    </div>
+
+    <div class="input-group">
+      <label for="inputCiudad">Ciudad / País Origen</label>
+      <input type="text" id="inputCiudad" value="Asunción, Paraguay" oninput="updateLetter()">
+    </div>
   </div>
-  <div class="input-group">
-    <label for="inputContacto">Dirigido A</label>
-    <input type="text" id="inputContacto" value="Equipo de Selección / Recursos Humanos" oninput="updateLetter()">
-  </div>
-  <div class="input-group">
-    <label for="inputFecha">Fecha</label>
-    <input type="text" id="inputFecha" value="Asunción, Paraguay" oninput="updateLetter()">
+
+  <div class="customizer-grid">
+    <div class="input-group">
+      <label for="inputModoFecha">Formato de Fecha</label>
+      <select id="inputModoFecha" onchange="updateLetter()">
+        <option value="hoy" selected>Fecha de Hoy (Automática)</option>
+        <option value="manual">Manual (Personalizada)</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label for="inputFechaManual">Fecha Personalizada</label>
+      <input type="text" id="inputFechaManual" value="" placeholder="Ej: 12 de Agosto de 2026" oninput="updateLetter()" disabled>
+    </div>
+
+    <div class="input-group">
+      <label for="inputIdiomaFecha">Idioma de Fecha</label>
+      <select id="inputIdiomaFecha" onchange="updateLetter()">
+        <option value="es-ES" selected>Español (12 de agosto de 2026)</option>
+        <option value="en-US">Inglés (August 12, 2026)</option>
+        <option value="pt-BR">Portugués (12 de agosto de 2026)</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label for="inputEnfoque">Enfoque / Destaque Técnico</label>
+      <select id="inputEnfoque" onchange="updateLetter()">
+        <option value="ey" selected>EY Special (.NET 8, Next.js, APIs & Clean Arch)</option>
+        <option value="fullstack">Full Stack Estándar (.NET & React)</option>
+        <option value="sifen">Especialista SIFEN & Backend .NET</option>
+      </select>
+    </div>
   </div>
 </div>
 
@@ -378,9 +476,9 @@ body {
     </div>
     <div class="hero-main">
       <h1>Lic. Edison Medina Valdez</h1>
-      <div class="hero-subtitle">Desarrollador Full Stack .NET & React | Especialista en Facturación Electrónica SIFEN</div>
+      <div class="hero-subtitle">Desarrollador Full Stack .NET & React / Next.js | Especialista en Arquitectura de Software</div>
       <div class="contact-info">
-        <span>📍 Asunción, Paraguay</span>
+        <span id="lblHeaderUbicacion">📍 Asunción, Paraguay</span>
         <a href="tel:+595984180410">📱 +595 984 180 410</a>
         <a href="mailto:edisonmedina69@gmail.com">✉️ edisonmedina69@gmail.com</a>
         <a href="https://linkedin.com/in/edison-medina-valdez" target="_blank">🔗 LinkedIn</a>
@@ -393,78 +491,149 @@ body {
   <main class="letter-body">
     <div class="letter-meta">
       <div class="recipient-info">
-        <div id="lblContacto" style="color: var(--text-light); font-size: 11px;">Equipo de Selección / Recursos Humanos</div>
-        <strong id="lblEmpresa">Nombre de la Empresa</strong>
+        <div id="lblContacto" style="color: var(--text-light); font-size: 11px;">Equipo de Selección de Talentos</div>
+        <strong id="lblEmpresa">EY Paraguay (Ernst & Young)</strong>
       </div>
-      <div class="letter-date" id="lblFecha">Asunción, Paraguay</div>
+      <div class="letter-date" id="lblFecha">Asunción, Paraguay — 12 de agosto de 2026</div>
     </div>
 
     <div class="letter-subject">
-      Asunto: Postulación para la vacante de <span id="lblPuesto">Desarrollador Full Stack .NET & React</span>
+      Asunto: Postulación para la vacante de <span id="lblPuesto">Desarrollador Full Stack .NET & React / Next.js</span>
     </div>
 
     <div class="letter-content">
-      <p>Estimado/a <span id="lblContactoSaludo">Equipo de Selección</span>,</p>
+      <p>Estimado/a <span id="lblContactoSaludo">Equipo de Selección de Talentos</span>,</p>
 
       <p>
         Me dirijo a ustedes con gran entusiasmo para presentar mi candidatura a la posición de 
-        <strong id="lblPuestoTexto">Desarrollador Full Stack .NET & React</strong> en <strong id="lblEmpresaTexto">Nombre de la Empresa</strong>. 
-        Con más de 3 años de experiencia en el desarrollo e implementación de sistemas empresariales críticos y soluciones de misión crítica, estoy convencido de que mi perfil técnico y orientación al resultado aportarán un valor significativo a sus proyectos informáticos.
+        <strong id="lblPuestoTexto">Desarrollador Full Stack .NET & React / Next.js</strong> en <strong id="lblEmpresaTexto">EY Paraguay (Ernst & Young)</strong>. 
+        Motivado por la excelencia técnica, la cultura de desarrollo continuo y el alcance global de proyectos que caracterizan a la firma, estoy convencido de que mi sólido perfil técnico y mentalidad orientada a resultados aportarían gran valor a sus equipos de ingeniería.
       </p>
 
-      <p>
-        A lo largo de mi trayectoria, me he especializado en la construcción de arquitecturas sólidas y escalables utilizando el ecosistema <strong>.NET (C#, Web API, Entity Framework)</strong> en el backend, así como <strong>React y JavaScript (ES6+)</strong> en el frontend. Destaco además mi experiencia comprobada liderando e integrando la <strong>Facturación Electrónica SIFEN (DNIT Paraguay)</strong> en múltiples plataformas administrativas (ERP / POS), gestionando la firma digital XML, comunicación SOAP/REST y el cumplimiento estricto de normativas impositivas locales.
+      <p id="parrafoExperiencia">
+        Cuento con experiencia comprobada diseñando e implementando arquitecturas sólidas en el ecosistema <strong>.NET 6/8 (C#, Web API, Entity Framework Core, Dapper)</strong>, así como interfaces modernas con <strong>React, Next.js (SSR/SSG), TypeScript y CSS/Tailwind</strong>. Asimismo, poseo fuerte dominio en el diseño de APIs RESTful, microservicios, optimización de bases de datos relacionales (SQL Server, PostgreSQL) y aplicación de buenas prácticas como <i>Clean Architecture</i>, principios SOLID y pruebas automatizadas (xUnit/Jest).
       </p>
 
       <div class="highlight-box">
-        <strong>Puntos clave que puedo aportar a su equipo:</strong>
-        <ul>
-          <li><strong>Desarrollo Full Stack Completo:</strong> Diseño e implementación de APIs RESTful de alto rendimiento en C# .NET y dashboards reactivos con React.js.</li>
-          <li><strong>Especialización en SIFEN:</strong> Dominio de los procesos de homologación, transmisión y contingencia de comprobantes electrónicos con la DNIT.</li>
-          <li><strong>Bases de Datos & Optimización:</strong> Modelado avanzado y optimización de consultas SQL Server, garantizando la integridad de datos transaccionales.</li>
-          <li><strong>Enfoque en Calidad y Negocio:</strong> Capacidad para traducir requerimientos de negocio complejos en soluciones de software limpias, mantenibles y orientadas a la experiencia de usuario.</li>
+        <strong>Fortalezas clave alineadas a las necesidades del puesto:</strong>
+        <ul id="listaFortalezas">
+          <li><strong>Desarrollo Backend & APIs Escalables:</strong> Diseño de Web APIs robustas y seguras en .NET 8 con arquitecturas Clean/CQRS y comunicación RESTful.</li>
+          <li><strong>Frontend Moderno con Next.js & React:</strong> Construcción de componentes reactivos, optimización con SSR/SSG y gestión eficiente del estado.</li>
+          <li><strong>Calidad de Código & DevOps:</strong> Enfoque riguroso en pruebas unitarias e integración, Code Reviews y pipelines CI/CD (GitHub Actions).</li>
+          <li><strong>Ownership & Metodologías Ágiles:</strong> Trabajo colaborativo en entornos Scrum/Kanban, pensamiento lógico, comunicación clara y alto compromiso con las entregas.</li>
         </ul>
       </div>
 
-      <p>
-        Me motiva la oportunidad de incorporarme a un equipo donde pueda afrontar desafíos de alto impacto técnico y colaborar activamente en la evolución de sus productos digitales. Adjunto a esta carta mi Currículum Vitae interactivo para su revisión.
+      <p id="parrafoCultura">
+        Me entusiasma especialmente la propuesta de valor de incorporar a un profesional apasionado por el crecimiento integral, las certificaciones técnicas avanzadas y la innovación en entornos internacionales altamente competitivos. Mi objetivo es asumir ownership sobre los desafíos técnicos y contribuir activamente en la construcción de productos digitales de impacto global.
       </p>
 
       <p>
-        Agradezco de antemano el tiempo dedicado a evaluar mi postulación y quedo a su entera disposición para mantener una entrevista personal o técnica en la fecha que consideren oportuna.
+        Adjunto a esta carta mi Currículum Vitae interactivo. Agradezco sinceramente el tiempo dedicado a revisar mi postulación y quedo a su entera disposición para coordinar una entrevista personal o técnica cuando lo consideren conveniente.
       </p>
     </div>
 
     <div class="signature-block">
-      <p style="margin-bottom: 20px;">Atentamente,</p>
+      <p style="margin-bottom: 18px;">Atentamente,</p>
       <div class="signature-name">Lic. Edison Medina Valdez</div>
-      <div class="signature-title">Desarrollador Full Stack .NET & React</div>
+      <div class="signature-title">Desarrollador Full Stack .NET & React / Next.js</div>
     </div>
   </main>
 </div>
 
 <script>
-// Fecha actual por defecto si no se edita
-const today = new Date();
-const options = { year: 'numeric', month: 'long', day: 'numeric' };
-const formattedDate = `Asunción, ${today.toLocaleDateString('es-ES', options)}`;
-document.getElementById('inputFecha').value = formattedDate;
-document.getElementById('lblFecha').innerText = formattedDate;
+// FUNCIÓN DE FECHA AUTOMÁTICA O PARAMETRIZADA
+function obtenerFechaFormateada(idioma, esManual, valorManual) {
+  if (esManual && valorManual.trim() !== '') {
+    return valorManual;
+  }
+  
+  const today = new Date();
+  const opciones = { year: 'numeric', month: 'long', day: 'numeric' };
+  
+  try {
+    const fechaFormateada = today.toLocaleDateString(idioma, opciones);
+    if (idioma === 'en-US') {
+      return fechaFormateada;
+    } else {
+      return fechaFormateada; // ej: 12 de agosto de 2026
+    }
+  } catch (e) {
+    return today.toDateString();
+  }
+}
 
 function updateLetter() {
   const empresa = document.getElementById('inputEmpresa').value || 'Nombre de la Empresa';
   const puesto = document.getElementById('inputPuesto').value || 'Desarrollador Full Stack .NET & React';
-  const contacto = document.getElementById('inputContacto').value || 'Equipo de Selección / Recursos Humanos';
-  const fecha = document.getElementById('inputFecha').value || formattedDate;
+  const contacto = document.getElementById('inputContacto').value || 'Equipo de Selección de Talentos';
+  const ciudad = document.getElementById('inputCiudad').value || 'Asunción, Paraguay';
+  
+  const modoFecha = document.getElementById('inputModoFecha').value;
+  const fechaManualInput = document.getElementById('inputFechaManual');
+  const idiomaFecha = document.getElementById('inputIdiomaFecha').value;
 
+  if (modoFecha === 'manual') {
+    fechaManualInput.disabled = false;
+  } else {
+    fechaManualInput.disabled = true;
+  }
+
+  const fechaTexto = obtenerFechaFormateada(idiomaFecha, modoFecha === 'manual', fechaManualInput.value);
+  const fechaFinal = `${ciudad} — ${fechaTexto}`;
+
+  // Actualizar elementos visuales
   document.getElementById('lblEmpresa').innerText = empresa;
   document.getElementById('lblEmpresaTexto').innerText = empresa;
   document.getElementById('lblPuesto').innerText = puesto;
   document.getElementById('lblPuestoTexto').innerText = puesto;
   document.getElementById('lblContacto').innerText = contacto;
   document.getElementById('lblContactoSaludo').innerText = contacto;
-  document.getElementById('lblFecha').innerText = fecha;
+  document.getElementById('lblFecha').innerText = fechaFinal;
+  document.getElementById('lblHeaderUbicacion').innerText = `📍 ${ciudad}`;
+
+  // Actualizar contenido según el enfoque técnico seleccionado
+  const enfoque = document.getElementById('inputEnfoque').value;
+  const listaFortalezas = document.getElementById('listaFortalezas');
+
+  if (enfoque === 'ey') {
+    listaFortalezas.innerHTML = `
+      <li><strong>Desarrollo Backend & APIs Escalables:</strong> Diseño de Web APIs robustas y seguras en .NET 8 con arquitecturas Clean/CQRS y comunicación RESTful.</li>
+      <li><strong>Frontend Moderno con Next.js & React:</strong> Construcción de componentes reactivos, optimización con SSR/SSG y gestión eficiente del estado con TypeScript.</li>
+      <li><strong>Calidad de Código & DevOps:</strong> Enfoque riguroso en pruebas unitarias e integración (xUnit, Jest), Code Reviews y automatización con CI/CD (GitHub Actions).</li>
+      <li><strong>Ownership & Metodologías Ágiles:</strong> Trabajo colaborativo en entornos Scrum/Kanban, pensamiento lógico, comunicación clara y alto compromiso con los objetivos de negocio.</li>
+    `;
+  } else if (enfoque === 'sifen') {
+    listaFortalezas.innerHTML = `
+      <li><strong>Especialista en Facturación Electrónica SIFEN:</strong> Experiencia liderando integraciones de firma digital XML, transmisión REST/SOAP y contingencia ante la DNIT.</li>
+      <li><strong>Desarrollo Full Stack C# .NET:</strong> Web APIs avanzadas en .NET Core, ORM (Entity Framework/Dapper) y frontend en React.js.</li>
+      <li><strong>Bases de Datos & SQL:</strong> Optimización de consultas complejas y diseño de estructuras relacionales en SQL Server y PostgreSQL.</li>
+      <li><strong>Entrega de Valor Continuo:</strong> Capacidad para resolver escenarios transaccionales complejos y sistemas críticos de alto tráfico.</li>
+    `;
+  } else {
+    listaFortalezas.innerHTML = `
+      <li><strong>Arquitectura .NET & C#:</strong> Construcción de APIs escalables, microservicios y sistemas empresariales integrados.</li>
+      <li><strong>Desarrollo Frontend React:</strong> Creación de interfaces dinámicas, SPA/SSR, consumo de APIs REST/GraphQL y diseño responsivo.</li>
+      <li><strong>Bases de Datos Relacionales:</strong> Modelado y gestión eficiente en SQL Server y PostgreSQL.</li>
+      <li><strong>Metodologías Ágiles:</strong> Adaptabilidad rápida a equipos distribuidos bajo metodologías Scrum y buenas prácticas informáticas.</li>
+    `;
+  }
 }
+
+// BOTÓN DE CARGA RÁPIDA DE PLANTILLA EY PARAGUAY
+function cargarPlantillaEY() {
+  document.getElementById('inputEmpresa').value = 'EY Paraguay (Ernst & Young)';
+  document.getElementById('inputPuesto').value = 'Desarrollador Full Stack .NET & React / Next.js';
+  document.getElementById('inputContacto').value = 'Equipo de Selección de Talentos EY';
+  document.getElementById('inputCiudad').value = 'Asunción, Paraguay';
+  document.getElementById('inputModoFecha').value = 'hoy';
+  document.getElementById('inputIdiomaFecha').value = 'es-ES';
+  document.getElementById('inputEnfoque').value = 'ey';
+  updateLetter();
+}
+
+// Inicialización automática
+updateLetter();
 </script>
 
 </body>
