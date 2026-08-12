@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carta de Presentación — Lic. Edison Medina Valdez | Full Stack .NET & React</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-dark: #090d16;
+  --bg-page: #cbd5e1;
+  --panel-dark: #0f172a;
+  --primary: #1e3a8a;
+  --accent-indigo: #4f46e5;
+  --accent-blue: #2563eb;
+  --accent-teal: #0d9488;
+  --text-primary: #0f172a;
+  --text-muted: #334155;
+  --text-light: #64748b;
+  --border-color: #e2e8f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 11px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* BARRA DE HERRAMIENTAS / CONTROLES */
+.toolbar {
+  width: 210mm;
+  background: #ffffff;
+  padding: 14px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.toolbar-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--panel-dark);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  background: var(--accent-indigo);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: #f1f5f9;
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background: #e2e8f0;
+  color: var(--text-primary);
+}
+
+.customizer-box {
+  width: 210mm;
+  background: #ffffff;
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.input-group label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-light);
+  text-transform: uppercase;
+}
+
+.input-group input {
+  padding: 6px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--accent-indigo);
+}
+
+/* DOCUMENTO A4 */
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  background: #ffffff;
+  box-shadow: 0 20px 50px rgba(9, 13, 22, 0.25);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER HERO (IGUAL AL CV) */
+.hero {
+  background: radial-gradient(circle at 90% 10%, rgba(79, 70, 229, 0.15) 0%, transparent 60%),
+              linear-gradient(135deg, #090d16 0%, #0f172a 50%, #1e1b4b 100%);
+  color: #ffffff;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  border-bottom: 3px solid var(--accent-indigo);
+}
+
+.photo-glow {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--accent-indigo), var(--accent-teal));
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.3);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-glow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #0f172a;
+}
+
+.hero-main {
+  flex: 1;
+}
+
+.hero-main h1 {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  background: linear-gradient(to right, #ffffff, #c7d2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-size: 10px;
+  color: #94a3b8;
+  margin-top: 10px;
+}
+
+.contact-info a, .contact-info span {
+  color: #cbd5e1;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* CUERPO DE LA CARTA */
+.letter-body {
+  padding: 36px 45px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.letter-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 16px;
+}
+
+.recipient-info {
+  font-size: 12px;
+}
+
+.recipient-info strong {
+  color: var(--text-primary);
+  font-size: 13px;
+}
+
+.letter-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-light);
+  text-align: right;
+}
+
+.letter-subject {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-indigo);
+  margin-bottom: 20px;
+}
+
+.letter-content p {
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.highlight-box {
+  background: #f8fafc;
+  border-left: 4px solid var(--accent-indigo);
+  padding: 14px 18px;
+  margin: 18px 0;
+  border-radius: 0 6px 6px 0;
+}
+
+.highlight-box ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.highlight-box li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.highlight-box li::before {
+  content: "▹";
+  color: var(--accent-indigo);
+  font-weight: bold;
+}
+
+.signature-block {
+  margin-top: auto;
+  padding-top: 30px;
+}
+
+.signature-name {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.signature-title {
+  font-size: 11px;
+  color: var(--text-light);
+}
+
+/* MEDIA QUERY PARA IMPRESIÓN (PDF) */
+@media print {
+  body {
+    background: none;
+    padding: 0;
+  }
+  .toolbar, .customizer-box {
+    display: none !important;
+  }
+  .page {
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+    min-height: 100vh;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR CONTROLES -->
+<div class="toolbar">
+  <div class="toolbar-title">📄 Carta de Presentación Interactiva</div>
+  <div class="action-buttons">
+    <a href="index.html" class="btn btn-secondary">
+      ⬅ Volver al CV
+    </a>
+    <button onclick="window.print()" class="btn">
+      🖨️ Imprimir / Guardar en PDF
+    </button>
+  </div>
+</div>
+
+<!-- EDITOR RÁPIDO PARA VACANTES -->
+<div class="customizer-box">
+  <div class="input-group">
+    <label for="inputEmpresa">Empresa</label>
+    <input type="text" id="inputEmpresa" value="Nombre de la Empresa" oninput="updateLetter()">
+  </div>
+  <div class="input-group">
+    <label for="inputPuesto">Puesto a Postular</label>
+    <input type="text" id="inputPuesto" value="Desarrollador Full Stack .NET & React" oninput="updateLetter()">
+  </div>
+  <div class="input-group">
+    <label for="inputContacto">Dirigido A</label>
+    <input type="text" id="inputContacto" value="Equipo de Selección / Recursos Humanos" oninput="updateLetter()">
+  </div>
+  <div class="input-group">
+    <label for="inputFecha">Fecha</label>
+    <input type="text" id="inputFecha" value="Asunción, Paraguay" oninput="updateLetter()">
+  </div>
+</div>
+
+<!-- DOCUMENTO FORMATO A4 -->
+<div class="page">
+  <!-- BANNER HEADER -->
+  <header class="hero">
+    <div class="photo-glow">
+      <img src="foto.jpg" alt="Lic. Edison Medina Valdez" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="photo-fallback" style="display:none;">EM</div>
+    </div>
+    <div class="hero-main">
+      <h1>Lic. Edison Medina Valdez</h1>
+      <div class="hero-subtitle">Desarrollador Full Stack .NET & React | Especialista en Facturación Electrónica SIFEN</div>
+      <div class="contact-info">
+        <span>📍 Asunción, Paraguay</span>
+        <a href="tel:+595984180410">📱 +595 984 180 410</a>
+        <a href="mailto:edisonmedina69@gmail.com">✉️ edisonmedina69@gmail.com</a>
+        <a href="https://linkedin.com/in/edison-medina-valdez" target="_blank">🔗 LinkedIn</a>
+        <a href="https://github.com/Edisonmedina69" target="_blank">💻 GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- CUERPO DE LA CARTA -->
+  <main class="letter-body">
+    <div class="letter-meta">
+      <div class="recipient-info">
+        <div id="lblContacto" style="color: var(--text-light); font-size: 11px;">Equipo de Selección / Recursos Humanos</div>
+        <strong id="lblEmpresa">Nombre de la Empresa</strong>
+      </div>
+      <div class="letter-date" id="lblFecha">Asunción, Paraguay</div>
+    </div>
+
+    <div class="letter-subject">
+      Asunto: Postulación para la vacante de <span id="lblPuesto">Desarrollador Full Stack .NET & React</span>
+    </div>
+
+    <div class="letter-content">
+      <p>Estimado/a <span id="lblContactoSaludo">Equipo de Selección</span>,</p>
+
+      <p>
+        Me dirijo a ustedes con gran entusiasmo para presentar mi candidatura a la posición de 
+        <strong id="lblPuestoTexto">Desarrollador Full Stack .NET & React</strong> en <strong id="lblEmpresaTexto">Nombre de la Empresa</strong>. 
+        Con más de 3 años de experiencia en el desarrollo e implementación de sistemas empresariales críticos y soluciones de misión crítica, estoy convencido de que mi perfil técnico y orientación al resultado aportarán un valor significativo a sus proyectos informáticos.
+      </p>
+
+      <p>
+        A lo largo de mi trayectoria, me he especializado en la construcción de arquitecturas sólidas y escalables utilizando el ecosistema <strong>.NET (C#, Web API, Entity Framework)</strong> en el backend, así como <strong>React y JavaScript (ES6+)</strong> en el frontend. Destaco además mi experiencia comprobada liderando e integrando la <strong>Facturación Electrónica SIFEN (DNIT Paraguay)</strong> en múltiples plataformas administrativas (ERP / POS), gestionando la firma digital XML, comunicación SOAP/REST y el cumplimiento estricto de normativas impositivas locales.
+      </p>
+
+      <div class="highlight-box">
+        <strong>Puntos clave que puedo aportar a su equipo:</strong>
+        <ul>
+          <li><strong>Desarrollo Full Stack Completo:</strong> Diseño e implementación de APIs RESTful de alto rendimiento en C# .NET y dashboards reactivos con React.js.</li>
+          <li><strong>Especialización en SIFEN:</strong> Dominio de los procesos de homologación, transmisión y contingencia de comprobantes electrónicos con la DNIT.</li>
+          <li><strong>Bases de Datos & Optimización:</strong> Modelado avanzado y optimización de consultas SQL Server, garantizando la integridad de datos transaccionales.</li>
+          <li><strong>Enfoque en Calidad y Negocio:</strong> Capacidad para traducir requerimientos de negocio complejos en soluciones de software limpias, mantenibles y orientadas a la experiencia de usuario.</li>
+        </ul>
+      </div>
+
+      <p>
+        Me motiva la oportunidad de incorporarme a un equipo donde pueda afrontar desafíos de alto impacto técnico y colaborar activamente en la evolución de sus productos digitales. Adjunto a esta carta mi Currículum Vitae interactivo para su revisión.
+      </p>
+
+      <p>
+        Agradezco de antemano el tiempo dedicado a evaluar mi postulación y quedo a su entera disposición para mantener una entrevista personal o técnica en la fecha que consideren oportuna.
+      </p>
+    </div>
+
+    <div class="signature-block">
+      <p style="margin-bottom: 20px;">Atentamente,</p>
+      <div class="signature-name">Lic. Edison Medina Valdez</div>
+      <div class="signature-title">Desarrollador Full Stack .NET & React</div>
+    </div>
+  </main>
+</div>
+
+<script>
+// Fecha actual por defecto si no se edita
+const today = new Date();
+const options = { year: 'numeric', month: 'long', day: 'numeric' };
+const formattedDate = `Asunción, ${today.toLocaleDateString('es-ES', options)}`;
+document.getElementById('inputFecha').value = formattedDate;
+document.getElementById('lblFecha').innerText = formattedDate;
+
+function updateLetter() {
+  const empresa = document.getElementById('inputEmpresa').value || 'Nombre de la Empresa';
+  const puesto = document.getElementById('inputPuesto').value || 'Desarrollador Full Stack .NET & React';
+  const contacto = document.getElementById('inputContacto').value || 'Equipo de Selección / Recursos Humanos';
+  const fecha = document.getElementById('inputFecha').value || formattedDate;
+
+  document.getElementById('lblEmpresa').innerText = empresa;
+  document.getElementById('lblEmpresaTexto').innerText = empresa;
+  document.getElementById('lblPuesto').innerText = puesto;
+  document.getElementById('lblPuestoTexto').innerText = puesto;
+  document.getElementById('lblContacto').innerText = contacto;
+  document.getElementById('lblContactoSaludo').innerText = contacto;
+  document.getElementById('lblFecha').innerText = fecha;
+}
+</script>
+
+</body>
+</html>
