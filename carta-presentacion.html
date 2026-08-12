@@ -511,7 +511,7 @@ body {
       </p>
 
       <p id="parrafoExperiencia">
-        Cuento con experiencia comprobada diseñando e implementando arquitecturas sólidas en el ecosistema <strong>.NET 6/8 (C#, Web API, Entity Framework Core, Dapper)</strong>, así como interfaces modernas con <strong>React, Next.js (SSR/SSG), TypeScript y CSS/Tailwind</strong>. Asimismo, poseo fuerte dominio en el diseño de APIs RESTful, microservicios, optimización de bases de datos relacionales (SQL Server, PostgreSQL) y aplicación de buenas prácticas como <i>Clean Architecture</i>, principios SOLID y pruebas automatizadas (xUnit/Jest).
+        Cuento con experiencia profesional desarrollando e implementando soluciones robustas en el ecosistema <strong>.NET 6/8 (C#, Web API, Entity Framework Core, Dapper)</strong>, así como interfaces de usuario modernas con <strong>React, Next.js (SSR/SSG), TypeScript y Tailwind CSS</strong>. Asimismo, poseo fuerte dominio en el diseño de APIs RESTful, microservicios, optimización de bases de datos relacionales (SQL Server, PostgreSQL) y aplicación de buenas prácticas como <i>Clean Architecture</i>, principios SOLID y pruebas automatizadas (xUnit/Jest).
       </p>
 
       <div class="highlight-box">
@@ -542,6 +542,31 @@ body {
 </div>
 
 <script>
+// FUNCIÓN PARA CALCULAR LA EXPERIENCIA DESDE EL 03 DE AGOSTO DE 2025
+function calcularTiempoExperiencia() {
+  const startDate = new Date(2025, 7, 3); // 3 de agosto de 2025
+  const today = new Date();
+  
+  let months = (today.getFullYear() - startDate.getFullYear()) * 12 + (today.getMonth() - startDate.getMonth());
+  if (today.getDate() < startDate.getDate()) {
+    months--;
+  }
+  
+  if (months <= 0) {
+    return "en desarrollo constante";
+  } else if (months < 12) {
+    return `${months} ${months === 1 ? 'mes' : 'meses'}`;
+  } else {
+    const years = Math.floor(months / 12);
+    const remMonths = months % 12;
+    if (remMonths === 0) {
+      return `${years} ${years === 1 ? 'año' : 'años'}`;
+    } else {
+      return `${years} ${years === 1 ? 'año' : 'años'} y ${remMonths} ${remMonths === 1 ? 'mes' : 'meses'}`;
+    }
+  }
+}
+
 // FUNCIÓN DE FECHA AUTOMÁTICA O PARAMETRIZADA
 function obtenerFechaFormateada(idioma, esManual, valorManual) {
   if (esManual && valorManual.trim() !== '') {
@@ -552,12 +577,7 @@ function obtenerFechaFormateada(idioma, esManual, valorManual) {
   const opciones = { year: 'numeric', month: 'long', day: 'numeric' };
   
   try {
-    const fechaFormateada = today.toLocaleDateString(idioma, opciones);
-    if (idioma === 'en-US') {
-      return fechaFormateada;
-    } else {
-      return fechaFormateada; // ej: 12 de agosto de 2026
-    }
+    return today.toLocaleDateString(idioma, opciones);
   } catch (e) {
     return today.toDateString();
   }
