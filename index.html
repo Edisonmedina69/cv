@@ -380,13 +380,34 @@ body {
 }
 
 .proj-scope {
-  font-size: 9px;
+  font-size: 8.5px;
   font-weight: 700;
   color: #ffffff;
   background: var(--panel-dark);
   padding: 2px 6px;
   border-radius: 3px;
   text-transform: uppercase;
+}
+
+.badge-vis {
+  font-size: 8px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 3px;
+  margin-left: 4px;
+  text-transform: uppercase;
+}
+
+.badge-vis.public {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+.badge-vis.private {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
 }
 
 .proj-tech-line {
@@ -655,7 +676,7 @@ body {
 
           <div class="proj-block">
             <div class="proj-head">
-              <span class="proj-name">🚀 SifenPortal <a href="https://github.com/Edisonmedina69/SifenPortal" target="_blank" class="proj-url">github.com/Edisonmedina69/SifenPortal</a></span>
+              <span class="proj-name">🚀 SifenPortal <span class="badge-vis private">Repo Privado</span></span>
               <span class="proj-scope">Linux · Contabo VPS</span>
             </div>
             <div class="proj-tech-line">.NET 8 · C# · SIFEN DNIT · Linux Server · SOAP / XML · Worker Services</div>
@@ -667,7 +688,7 @@ body {
 
           <div class="proj-block">
             <div class="proj-head">
-              <span class="proj-name">💸 ÑandeFinanza 2.0 <a href="https://github.com/Edisonmedina69" target="_blank" class="proj-url">github.com/Edisonmedina69</a></span>
+              <span class="proj-name">💸 ÑandeFinanza 2.0 <span class="badge-vis private">Repo Privado</span></span>
               <span class="proj-scope">Vercel & Supabase</span>
             </div>
             <div class="proj-tech-line">React.js (PWA) · Supabase (PostgreSQL RLS) · Vercel Cloud · Offline</div>
@@ -679,8 +700,8 @@ body {
 
           <div class="proj-block">
             <div class="proj-head">
-              <span class="proj-name">📱 MEGASOFTAPPV3 <a href="https://github.com/Edisonmedina69/MEGASOFTAPPV3" target="_blank" class="proj-url">github.com/Edisonmedina69/MEGASOFTAPPV3</a></span>
-              <span class="proj-scope">Trabajo Final de Grado (TFG)</span>
+              <span class="proj-name">📱 MEGASOFTAPPV3 <a href="https://github.com/Edisonmedina69/MEGASOFTAPPV3" target="_blank" class="proj-url">github.com/Edisonmedina69/MEGASOFTAPPV3</a> <span class="badge-vis public">Público</span></span>
+              <span class="proj-scope">TFG · Móvil</span>
             </div>
             <div class="proj-tech-line">Android Studio (Java/Kotlin) · Firebase Firestore · Auth · Material Design</div>
             <ul class="proj-bullets-small">
@@ -690,7 +711,7 @@ body {
 
           <div class="proj-block">
             <div class="proj-head">
-              <span class="proj-name">🐄 ERP Ganadero <a href="https://github.com/Edisonmedina69" target="_blank" class="proj-url">github.com/Edisonmedina69</a></span>
+              <span class="proj-name">🐄 ERP Ganadero <span class="badge-vis private">Empresarial Privado</span></span>
               <span class="proj-scope">MVC & Razor Pages</span>
             </div>
             <div class="proj-tech-line">C# · ASP.NET Core MVC · SQL Server · Git Branches · AI Flow</div>
