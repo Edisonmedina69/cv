@@ -16,8 +16,8 @@
 
 ## 📬 Contacto
 
-- 📧 edisonmedina69@gmail.com
-- 📞 +595 984 180 410 / 0973 744 383
+- 📧 edisonmedina415@gmail.com
+- 📞 +595 973 744 383 (0973 744 383)
 - 🔗 [LinkedIn](https://www.linkedin.com/in/edison-medina-valdez-333b1727b/)
 - 🐙 [GitHub](https://github.com/Edisonmedina69)
 
