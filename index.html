@@ -430,7 +430,7 @@ body {
 
 /* ===== SKILLS MATRIX ===== */
 .skill-sec {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .skill-sec:last-child {
@@ -438,12 +438,15 @@ body {
 }
 
 .skill-sec-title {
-  font-size: 9.5px;
-  font-weight: 700;
-  color: var(--text-light);
+  font-size: 9px;
+  font-weight: 800;
+  color: var(--panel-dark);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 6px;
+  letter-spacing: 0.6px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .pills {
@@ -453,9 +456,9 @@ body {
 }
 
 .pill-item {
-  font-size: 8px;
+  font-size: 8.5px;
   font-weight: 600;
-  padding: 2px 5px;
+  padding: 2.5px 6px;
   border-radius: 3px;
   background: #ffffff;
   color: var(--text-muted);
@@ -465,8 +468,9 @@ body {
 
 .pill-item.featured {
   background: #eff6ff;
-  color: var(--accent-blue);
-  border-color: #bfdbfe;
+  color: var(--accent-indigo);
+  border-color: #c7d2fe;
+  font-weight: 700;
 }
 
 .pill-item.teal {
@@ -738,59 +742,59 @@ body {
 
       <!-- STACK TÉCNICO -->
       <section>
-        <div class="title-sec">🛠️ Stack Tecnológico</div>
+        <div class="title-sec">🛠️ Stack & Tecnologías</div>
 
         <div class="skill-sec">
-          <div class="skill-sec-title">Backend & Arquitectura</div>
+          <div class="skill-sec-title">💻 Backend & Arquitectura</div>
           <div class="pills">
             <span class="pill-item featured">C# / .NET 8</span>
-            <span class="pill-item featured">ASP.NET MVC / Razor</span>
             <span class="pill-item featured">ASP.NET Web API</span>
-            <span class="pill-item">EF Core</span>
+            <span class="pill-item featured">Worker Services</span>
+            <span class="pill-item">ASP.NET MVC</span>
+            <span class="pill-item">Entity Framework Core</span>
             <span class="pill-item">Dapper</span>
-            <span class="pill-item">Worker Services</span>
             <span class="pill-item">Clean Architecture</span>
-            <span class="pill-item">SOLID Principles</span>
+            <span class="pill-item">SOLID</span>
             <span class="pill-item">Java</span>
           </div>
         </div>
 
         <div class="skill-sec">
-          <div class="skill-sec-title">Frontend & Web</div>
+          <div class="skill-sec-title">🏛️ Facturación Fiscal & Integraciones</div>
           <div class="pills">
-            <span class="pill-item featured">React.js (PWA)</span>
-            <span class="pill-item featured">JavaScript (ES6+)</span>
-            <span class="pill-item">TypeScript</span>
-            <span class="pill-item">HTML5 / CSS3</span>
-            <span class="pill-item">Tailwind CSS</span>
-            <span class="pill-item">Bootstrap</span>
-            <span class="pill-item">Android (Java)</span>
+            <span class="pill-item featured">SIFEN / DNIT (v150)</span>
+            <span class="pill-item featured">SOAP Webservices</span>
+            <span class="pill-item featured">Firma Digital X.509</span>
+            <span class="pill-item">PKCS#12</span>
+            <span class="pill-item">Validación XSD</span>
+            <span class="pill-item">Formato KUDE</span>
+            <span class="pill-item">RESTful APIs</span>
           </div>
         </div>
 
         <div class="skill-sec">
-          <div class="skill-sec-title">Base de Datos & DevOps</div>
+          <div class="skill-sec-title">🌐 Frontend & Móvil</div>
+          <div class="pills">
+            <span class="pill-item featured">React.js (PWA)</span>
+            <span class="pill-item featured">TypeScript</span>
+            <span class="pill-item">JavaScript (ES6+)</span>
+            <span class="pill-item">Tailwind CSS</span>
+            <span class="pill-item">HTML5 / CSS3</span>
+            <span class="pill-item teal">Android Studio (Java/Kotlin)</span>
+          </div>
+        </div>
+
+        <div class="skill-sec">
+          <div class="skill-sec-title">🗄️ Base de Datos & Cloud DevOps</div>
           <div class="pills">
             <span class="pill-item featured">SQL Server</span>
             <span class="pill-item featured">PostgreSQL</span>
-            <span class="pill-item teal">Supabase</span>
+            <span class="pill-item teal">Supabase (RLS)</span>
             <span class="pill-item teal">Vercel</span>
-            <span class="pill-item teal">Firebase</span>
-            <span class="pill-item teal">Docker</span>
-            <span class="pill-item">Linux / Contabo</span>
-          </div>
-        </div>
-
-        <div class="skill-sec">
-          <div class="skill-sec-title">IA & Metodologías Ágiles</div>
-          <div class="pills">
-            <span class="pill-item featured">AI Agents Flow</span>
-            <span class="pill-item featured">Prompt Engineering</span>
-            <span class="pill-item teal">AI Custom Skills</span>
-            <span class="pill-item">GitHub Issues</span>
-            <span class="pill-item">Git / Branches Flow</span>
-            <span class="pill-item">Markdown Docs</span>
-            <span class="pill-item">Scrum</span>
+            <span class="pill-item teal">Firebase (Firestore/Auth)</span>
+            <span class="pill-item">Linux VPS (Contabo)</span>
+            <span class="pill-item">Docker</span>
+            <span class="pill-item">Git / GitHub</span>
           </div>
         </div>
       </section>
