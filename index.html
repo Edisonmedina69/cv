@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" translate="no" class="notranslate">
 <head>
+<meta name="google" content="notranslate">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lic. Edison Medina Valdez — Desarrollador Full Stack .NET & React | Especialista SIFEN</title>
@@ -149,19 +150,21 @@ body {
 }
 
 .contact-info {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 4px 12px;
-  font-size: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+  font-size: 10.5px;
   color: #94a3b8;
+  margin-top: 4px;
 }
 
-.contact-info a {
+.contact-info a, .contact-info span {
   color: #e2e8f0;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   transition: color 0.2s;
 }
 
@@ -572,13 +575,11 @@ body {
       </div>
       
       <div class="contact-info">
-        <div>✉️ <a href="mailto:edisonmedina415@gmail.com">edisonmedina415@gmail.com</a></div>
-        <div>📞 <a href="tel:+595973744383" style="color: inherit; text-decoration: none;">+595 973 744 383</a></div>
-        <div>📍 Canindeyú / Asunción, PY</div>
-        <div>🐙 <a href="https://github.com/Edisonmedina69" target="_blank">github.com/Edisonmedina69</a></div>
-      </div>
-      <div class="contact-info" style="margin-top: 2px;">
-        <div>🔗 <a href="https://www.linkedin.com/in/edison-medina-valdez-333b1727b/" target="_blank">linkedin.com/in/edison-medina-valdez</a></div>
+        <span>📍 Canindeyú / Asunción, PY</span>
+        <a href="tel:+595973744383">📱 +595 973 744 383</a>
+        <a href="mailto:edisonmedina415@gmail.com">✉️ edisonmedina415@gmail.com</a>
+        <a href="https://www.linkedin.com/in/edison-medina-valdez-333b1727b/" target="_blank">🔗 LinkedIn</a>
+        <a href="https://github.com/Edisonmedina69" target="_blank">💻 GitHub</a>
       </div>
     </div>
   </header>
@@ -615,14 +616,14 @@ body {
 
         <div class="exp-item">
           <div class="exp-title-row">
-            <span class="exp-role">Especialista en Facturación Electrónica SIFEN (Propio) & Dev .NET</span>
+            <span class="exp-role">Especialista en Facturación Electrónica SIFEN & Dev .NET</span>
             <span class="exp-period">03 Ago 2025 – Presente</span>
           </div>
-          <div class="exp-meta">Sisprime Sistemas / Desarrollo Independiente</div>
+          <div class="exp-meta">Sisprime Sistemas (Colaboración) / Desarrollo Independiente</div>
           <ul class="exp-desc">
-            <li><strong>Desarrollo del motor fiscal propio:</strong> Diseñé e implementé en <strong>C# (.NET 8)</strong> el sistema de facturación electrónica para emisión, firma criptográfica y transmisión de DTEs (<strong>Facturas, Notas de Crédito, Notas de Débito, Auto-facturas e Importación/Exportación</strong>) según el Manual Técnico SIFEN v150.</li>
-            <li><strong>Automatización SOAP/XML:</strong> Conexión con los Web Services de la DNIT, firma digital PKCS#12 (certificados X.509) y validación estricta de esquemas XSD oficiales.</li>
-            <li><strong>Servicios Resilientes:</strong> Programación de <strong>Worker Services</strong> en segundo plano con control de concurrencia y colas de reintento para alta disponibilidad.</li>
+            <li><strong>Motor Fiscal SIFEN Empresarial & Propio:</strong> Desarrollo en <strong>C# (.NET 8)</strong> del sistema de facturación electrónica para emisión, firma criptográfica y transmisión de DTEs (Facturas, Notas de Crédito, Débito, Auto-facturas e Importación/Exportación) según normativa DNIT SIFEN v150.</li>
+            <li><strong>Integración SOAP & Certificados X.509:</strong> Comunicación directa con los Web Services SOAP de la DNIT, firma digital PKCS#12 y validación estricta de esquemas XSD oficiales.</li>
+            <li><strong>Worker Services Resilientes:</strong> Servicios en segundo plano con control de concurrencia, colas de reintento para alta disponibilidad y arquitectura desacoplada para clientes independientes.</li>
           </ul>
         </div>
 
@@ -631,42 +632,51 @@ body {
             <span class="exp-role">Desarrollador Full Stack / Colaborador de Proyectos</span>
             <span class="exp-period">2024 – 2025</span>
           </div>
-          <div class="exp-meta">Proyectos en Equipo & Consultoría</div>
+          <div class="exp-meta">Proyectos en Equipo, Consultoría & Desarrollo Móvil</div>
           <ul class="exp-desc">
-            <li><strong>Colaboración en ERP Ganadero:</strong> Desarrollo en equipo del backend transaccional y paneles web utilizando <strong>ASP.NET Core Razor Pages / MVC</strong>, <strong>C#</strong> y <strong>SQL Server</strong>. Gestión ágil de tareas con <strong>GitHub Issues</strong>, control de versiones por ramas en GitHub, documentación en <strong>Markdown</strong>, y optimización del flujo mediante <strong>Agentes de IA y Skills personalizados</strong>.</li>
-            <li><strong>Aplicaciones Web Progresivas (PWA):</strong> Construcción de arquitecturas frontend interactivas responsivas en <strong>React.js</strong> estructuradas como PWAs con APIs seguras y bases de datos SQL relacionales en la nube.</li>
+            <li><strong>ERP Ganadero:</strong> Backend transaccional y paneles web con <strong>ASP.NET Core MVC / Razor Pages</strong>, <strong>C#</strong> y <strong>SQL Server</strong> bajo metodología ágil (GitHub Issues, ramas y agentes IA).</li>
+            <li><strong>Sistemas Móviles & PWA:</strong> Desarrollo de aplicaciones móviles Android (Java/Kotlin + Firebase) y PWAs reactivas en <strong>React.js</strong> conectadas a APIs REST y bases de datos cloud.</li>
           </ul>
         </div>
       </section>
 
-      <!-- PROYECTOS TÉCNICOS DETALLADOS -->
+      <!-- PROYECTOS TÉCNICOS DESTACADOS -->
       <section>
-        <div class="title-sec">🛠️ Arquitectura de Proyectos</div>
+        <div class="title-sec">🛠️ Arquitectura de Proyectos & Contribuciones</div>
         <div class="proj-container">
+
+          <div class="proj-block">
+            <div class="proj-head">
+              <span class="proj-name">⚙️ Sisprime / Motor SIFEN</span>
+              <span class="proj-scope">Facturación DNIT</span>
+            </div>
+            <div class="proj-tech-line">C# .NET 8 · Worker Service · SOAP · XML Cryptography · X.509</div>
+            <ul class="proj-bullets-small">
+              <li>Motor de emisión y firma digital de XMLs tributarios conectado 24/7 con la DNIT.</li>
+              <li>Integración de servicios SOAP, contingencia offline y generación de formato KUDE.</li>
+            </ul>
+          </div>
+
+          <div class="proj-block">
+            <div class="proj-head">
+              <span class="proj-name">📱 MEGASOFTAPPV3</span>
+              <span class="proj-scope">Proyecto Final & Móvil</span>
+            </div>
+            <div class="proj-tech-line">Android Studio (Java/Kotlin) · Firebase Firestore · Auth · Material Design</div>
+            <ul class="proj-bullets-small">
+              <li>Sistema móvil de gestión integral de transporte de carga y cálculo de fletes.</li>
+              <li>Autenticación segura con Firebase Auth, base de datos NoSQL Firestore en tiempo real y reportes.</li>
+            </ul>
+          </div>
 
           <div class="proj-block">
             <div class="proj-head">
               <span class="proj-name">🐄 ERP Ganadero</span>
               <span class="proj-scope">MVC & Razor Pages</span>
             </div>
-            <div class="proj-tech-line">C# · ASP.NET Core Razor/MVC · SQL Server · Git Branches · AI Tools</div>
+            <div class="proj-tech-line">C# · ASP.NET Core Razor/MVC · SQL Server · Git Branches · AI Flow</div>
             <ul class="proj-bullets-small">
-              <li>Desarrollo colaborativo del core transaccional y layouts dinámicos.</li>
-              <li>Diseño del modelo relacional en <strong>SQL Server</strong> y control de versiones Git.</li>
-              <li>Aceleración del desarrollo con <strong>agentes de IA</strong> y documentación Markdown.</li>
-            </ul>
-          </div>
-
-          <div class="proj-block">
-            <div class="proj-head">
-              <span class="proj-name">⚙️ CaninWeb Worker</span>
-              <span class="proj-scope">Motor SIFEN</span>
-            </div>
-            <div class="proj-tech-line">C# Worker Service · SOAP · XML Cryptography · X.509</div>
-            <ul class="proj-bullets-small">
-              <li>Procesamiento 24/7 de alta concurrencia para firma digital de XMLs tributarios.</li>
-              <li>Transmisión asíncrona directa mediante servicios <strong>SOAP Webservices</strong> de la DNIT.</li>
-              <li>Resiliencia con políticas de reintento automático y generación de formato KUDE.</li>
+              <li>Desarrollo colaborativo del core transaccional ganadero y diseño relacional en SQL Server.</li>
             </ul>
           </div>
 
@@ -677,22 +687,7 @@ body {
             </div>
             <div class="proj-tech-line">React.js (PWA) · Supabase · PostgreSQL · Row Level Security (RLS)</div>
             <ul class="proj-bullets-small">
-              <li>Aplicación web progresiva (<strong>PWA</strong>) de gastos compartidos con soporte offline.</li>
-              <li>Seguridad de aislamiento de datos en PostgreSQL con políticas <strong>RLS</strong>.</li>
-              <li>Sincronización en tiempo real de registros mediante websockets.</li>
-            </ul>
-          </div>
-
-          <div class="proj-block">
-            <div class="proj-head">
-              <span class="proj-name">📅 ÑemoApp</span>
-              <span class="proj-scope">Booking PWA & API Integration</span>
-            </div>
-            <div class="proj-tech-line">React.js (PWA) · WhatsApp API · Docker · Node.js</div>
-            <ul class="proj-bullets-small">
-              <li>PWA de reservas de turnos y agenda online optimizada para dispositivos móviles.</li>
-              <li>Integración de la <strong>API de WhatsApp</strong> para notificaciones automatizadas.</li>
-              <li>Despliegue contenerizado y empaquetado del servicio con <strong>Docker</strong>.</li>
+              <li>PWA de finanzas y gastos compartidos con soporte offline y seguridad RLS en Postgres.</li>
             </ul>
           </div>
 
